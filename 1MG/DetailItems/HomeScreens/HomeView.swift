@@ -24,12 +24,20 @@ struct HomeView: View {
                 
                 ScrollView{
                     VStack(alignment:.leading){
-                        NavigationPart()
+                        HStack{
+                            NavigationPart()
+                            Spacer()
+                            CartButton()
+                                .padding(.top,10)
+                        }
+                        .padding(.trailing,20)
+                      
                         
                         VStack{
                             
                             SearchButton( placeHolder:a, text: $homeVm.serchText)
-                            
+                                
+                                .zIndex(1)
                            
                             
                             HStack{
@@ -151,15 +159,17 @@ struct HomeView: View {
                   
                 }//ScrollView
                 if mainViewModel.show {
-                  
+                    Color.black.opacity(0.4) // Background overlay
+                        .edgesIgnoringSafeArea(.all)
                     PrescriptionView()
                         .padding(.top,650)
                         .transition(.move(edge: .bottom))
                      //   .animation(.easeInOut)
                 }
                 
-                
-            }.ignoresSafeArea() //ZStack
+  
+            }
+            .ignoresSafeArea() //ZStack
             
         }//Navigation
     }//Body
@@ -207,5 +217,6 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
+            .environmentObject(MainViewModel())
     }
 }

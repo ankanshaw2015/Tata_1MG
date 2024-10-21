@@ -8,10 +8,19 @@
 import SwiftUI
 
 struct PopupView: View {
-    @Binding var addedItems: Int
-    @Binding var isPresented: Bool
+//    @Binding var addedItems: Int
+//    @Binding var isPresented: Bool
     @State var isSelected : Bool = false
-    let options: [String]
+//    let options: [String]
+//
+//    @Binding var item : ItemCellData
+    
+    @Binding var addedItems: Int
+        @Binding var isPresented: Bool
+        @Binding var item: ItemCellData // Add this binding
+        let options: [String]
+    
+    @EnvironmentObject var viewModel:MainViewModel
 
     var body: some View {
         ScrollView{
@@ -23,6 +32,7 @@ struct PopupView: View {
                     Button(action: {
                         selectItem(option)
                         isPresented = false
+                        viewModel.addQuantity(for: item,quantity: Int(option) ?? 10)
                         
                     }) {
                         HStack{
@@ -45,6 +55,7 @@ struct PopupView: View {
                 Button("Clear Items") {
                     addedItems = 0 // Clear the selected items
                     isPresented = false // Dismiss the popup
+                    viewModel.minimizeQuantity(for: item,quantity: 0)
                 }
                 .padding()
                 .background(Color.red)
@@ -58,6 +69,7 @@ struct PopupView: View {
     private func selectItem(_ item: String) {
         addedItems = Int(item) ?? 10
         isSelected = true
+        
     }
 }
 

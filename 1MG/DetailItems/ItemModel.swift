@@ -7,7 +7,15 @@
 
 import Foundation
 
-class ItemCellData :Identifiable{
+class ItemCellData :Identifiable,Hashable{
+    static func == (lhs: ItemCellData, rhs: ItemCellData) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
+    func hash(into hasher: inout Hasher) {
+            hasher.combine(id) // Combine the ID for hashing
+        }
+    
     var id:String = UUID().uuidString
     var itemName:String
     var itemImages:[String]

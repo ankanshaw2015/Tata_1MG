@@ -13,13 +13,17 @@ struct LetsStartView: View {
     
     @StateObject var view:MainViewModel = MainViewModel()
     var body: some View {
-        if viewModel.isLoggedIn{
-            HomeView()
-                .environmentObject(view)
-        }
-        else{
-            ContentView()
-        }
+        //       if viewModel.isLoggedIn{
+        //            HomeView()
+        //                .environmentObject(view)
+        //        }
+        //        else{
+        //            ContentView()
+        //        }
+        
+        //   }
+        MyCartView()
+            .environmentObject(viewModel)
     }
 }
 struct LetsStartView_Previews: PreviewProvider {

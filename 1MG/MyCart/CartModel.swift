@@ -7,8 +7,11 @@
 
 import Foundation
 
-class MyCartData{
+class MyCartData : ObservableObject {
     static let shared = MyCartData()
-    var myCart:[ItemCellData] = [ItemsFile().itemCellData[0],ItemsFile().itemCellData[1]]
+  
+    @Published var cartItems: [(item: ItemCellData, quantity: Int)] = [(item:ItemsFile().itemCellData[0] , quantity:1),
+                                                                       (item:ItemsFile().itemCellData[1] , quantity: 1)]
+    
     private init(){}
 }

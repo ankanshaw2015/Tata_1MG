@@ -22,8 +22,9 @@ struct SearchButton: View {
                            .foregroundColor(.gray)
                            .padding(.trailing,10)
         }
-        .border(.gray, width: 1)
+       
         .background(Color(red: 1.0, green: 0.8, blue: 0.7).opacity(0.2))
+        .border(.gray, width: 1)
         .cornerRadius(15)
         
         .padding(10)

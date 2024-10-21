@@ -8,14 +8,24 @@
 import SwiftUI
 
 struct MyCartView: View {
-    @State var cartData = MyCartData.shared.myCart
-    @State var counts : [Int] = [1,1]
+    
+    @EnvironmentObject var mainViewModel: MainViewModel
+   //  var cartData = MyCartData.shared.myCart
+  //  @State var counts : [Int] = [1,1]
     var items = ItemsFile().itemCellData
+    @State var sum  = 0
     
     var body: some View {
         NavigationView{
+            
+            
+            
             ScrollView{
+                
             VStack(alignment: .leading){
+                
+               // .navigationTitle("My Cart")
+                
                 HStack{
                     Image(systemName: "cart.fill")
                         .resizable()
@@ -33,56 +43,62 @@ struct MyCartView: View {
                 }
                 .padding()
                 
-                ForEach(cartData.indices, id: \.self) { index in
-                    let item = cartData[index]
-                    VStack {
-                        HStack {
-                            Image(item.itemImages[0])
-                                .resizable()
-                                .frame(width: 40, height: 40)
-                                .padding(.leading, 10)
-                            
-                            VStack(alignment: .leading) {
-                                Text(item.itemName)
-                                    .font(.title3)
-                                    .bold()
-                                Text("\u{20B9} \(item.itemPrice)")
-                            }
-                            .frame(width:160,alignment: .leading)
-                            Spacer()
-                            // Text("x")
-                            Stepper("X \(counts[index])") {
-                                if counts[index] <= 10{
-                                    counts[index] += 1
-                                }
-                                
-                                
-                            } onDecrement: {
-                                if counts[index] >= 1{
-                                    counts[index] -= 1
-                                }
-                                
-                            }
-                            .padding(.horizontal,5)
-                            
-                        }
-                        .frame(width: 380, height: 60, alignment: .leading)
-                        .background(Color.orange.opacity(0.2))
-                        .padding(3)
-                    }
-                }
+ 
+                ForEach(mainViewModel.cartData, id: \.0) { item, quantity in
+                    //                    let item = cartData[index]
+                                        VStack {
+                                            HStack {
+                                                Image(item.itemImages[0])
+                                                    .resizable()
+                                                    .frame(width: 40, height: 40)
+                                                    .padding(.leading, 10)
+
+                                                VStack(alignment: .leading) {
+                                                    Text(item.itemName)
+                                                        .font(.title3)
+                                                        .bold()
+                                                    Text("\u{20B9} \(item.itemPrice)")
+                                                }
+                                                .frame(width:160,alignment: .leading)
+                                                Spacer()
+                                                // Text("x")
+                                                Stepper("X \(quantity)") {
+                                                    if quantity <= 10{
+                                                        mainViewModel.addQuantity(for: item)
+                                                    }
+
+
+                                                } onDecrement: {
+                                                    if quantity >= 1{
+                                                        mainViewModel.minimizeQuantity(for: item)
+                                                        
+                                                      //  print(mainViewModel.cartData[0])
+                                                    }
+
+                                                }
+                                                .padding(.horizontal,5)
+
+                                            }
+                                            .frame(width: 380, height: 60, alignment: .leading)
+                                            .background(Color.orange.opacity(0.2))
+                                            .padding(3)
+                                        }
+                           }
+            
                 ExtraDetails()
                 
                 ScrollView(.horizontal){
                     Image("demo")
                 }
+                
                 SectionTitleAll(title: "Top Medicines",titleAll: "")
                     .bold()
+                
                 ScrollView(.horizontal){
                     HStack{
                         ForEach(0..<5){index in
                             HStack{
-                                ItemCell(image: items[index].itemImages[0], name: items[index].itemName, price: items[index].itemPrice)
+                                ItemCell(item:items[index])
                             }
                         }
                     }
@@ -95,18 +111,55 @@ struct MyCartView: View {
                     HStack{
                         Text("Item Total (MRP) ")
                         Spacer()
-                        
-                       let sum = Double(cartData[0].itemPrice) ?? 10
-                        
-                        ForEach(1..<counts.count) { indx in
-                            
-                        }
-                       
-                        
-                        Text("\(  String(format:"%.1f",(699 - (Double(cartData[0].itemPrice) ?? 10))) )")
-                        
-                        Text("\(Double(cartData[0].itemPrice) ?? 10)")
+
+                        Text("\u{20B9} \( String(format: "%.2f", (mainViewModel.totalBill() * 1.8)))")
                     }
+                    .padding(5)
+                    
+                    HStack{
+                        Text("Packing Charge ")
+                        Spacer()
+
+                        Text("\u{20B9} 0")
+                    }
+                    .padding(5)
+                    
+                    HStack{
+                        Text("Total Discount ")
+                        Spacer()
+
+                        Text("- \u{20B9} \( String(format: "%.2f", (mainViewModel.totalBill() * 1.8) - mainViewModel.totalBill()))" )
+                            .foregroundColor(Color.green)
+                            .bold()
+                    }
+                    .padding(5)
+                    
+                    HStack{
+                        Text("To be paid ")
+                            .bold()
+                        Spacer()
+
+                        Text("\u{20B9} \( String(format: "%.2f", (mainViewModel.totalBill())))")
+                            .bold()
+                    }
+                    .padding(.top,15)
+                    .background(.white.opacity(0.4))
+                    .frame(alignment: .center)
+                    
+                    HStack{
+                      
+
+                        Text("You have saved \u{20B9} \( String(format: "%.2f", (mainViewModel.totalBill() * 1.8) - mainViewModel.totalBill())) on this order")
+                            .foregroundColor(Color.green)
+                            .bold()
+                            .padding()
+                            .padding(.horizontal)
+                    }
+                    .background(.green.opacity(0.2))
+                    .padding(.top,15)
+                    
+                    .frame(alignment: .center)
+                    
                     Spacer()
                 }
                 .frame(width: 380, height: 300,alignment: .leading)
@@ -118,27 +171,33 @@ struct MyCartView: View {
             }//vstack\
             .frame(width: 380,alignment: .leading)
             //.background(.blue)
-        }//scrollview
-            .navigationTitle("Cart Details")
-        }//navigationview
+           
+        }
+            .navigationTitle("Hello")
+            //scrollview
+            
+            
+        }
+        .navigationBarHidden(true)
+        //navigationview
     }
-    func totalBill() -> Int{
-        // var sum = 0
-        
-//        ForEach(1..<counts.count){index in
-//            sum += Double(cartData[0].itemPrice) ?? 10
-//        }
-        
-        let sum = (0..<counts.count).reduce(0) { (result, index) in
-            result + (Int(cartData[index].itemPrice) ?? 5 * (counts[index]))
-                   }
-        
-        return sum
-    }
+    
+    
+//    func totalBill() -> Double{
+//
+//        let sum = (0..<counts.count).reduce(0) { (result, index) in
+//            result + (Double(cartData[index].itemPrice)! * Double(counts[index]))
+//                   }
+//
+//        return sum
+//    }
 }
 
 struct MyCartView_Previews: PreviewProvider {
     static var previews: some View {
-        MyCartView()
+        NavigationView{
+            MyCartView()
+        }
+        .environmentObject(MainViewModel())
     }
 }

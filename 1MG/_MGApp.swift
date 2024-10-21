@@ -10,13 +10,15 @@ import SwiftUI
 @main
 struct _MGApp: App {
     @StateObject var viewModel:UserViewModel = UserViewModel()
+    @StateObject var view: MainViewModel = MainViewModel()
     var body: some Scene {
       
         WindowGroup {
                    NavigationView {
-                       LetsStartView()
+                      // LetsStartView()
+                       MyCartView()
                    }
-                   .environmentObject(viewModel)
+                   .environmentObject(view)
                }
     }
 }

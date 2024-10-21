@@ -8,22 +8,29 @@
 import SwiftUI
 
 struct ItemCell: View {
-    var didAddCart: (()->())?
-    var image = "pill"
-    var name = "paracetamot"
-    var price = "190.00"
+//    var didAddCart: (()->())?
+//    var image = "pill"
+//    var name = "paracetamot"
+//    var price = "190.00"
+   @State var item :ItemCellData = ItemsFile().itemCellData[0]
+    
     var deliver = "delevery by 11 pm"
     var color1 = Color.orange
     var color2 = Color.white
-   @State var addedItems = 0
+    
+    @State var addedItems = 0
     @State var switchButton = false
     @State var showPopup = false
+    
+    @EnvironmentObject var viewModel:MainViewModel
+    
+    
     let options = ["1", "2", "3"]
     var body: some View {
         
         ZStack{
             VStack(spacing: 0){
-                Image(image)
+                Image(item.itemImages[0])
                     .resizable()
                     .scaledToFill()
                     .frame(width: 140,height: 140,alignment: .top)
@@ -33,7 +40,7 @@ struct ItemCell: View {
                 
                 // Spacer()
                 VStack(alignment:.leading){
-                    Text(name)
+                    Text(item.itemName)
                         .fontWeight(.bold)
                     //.frame(alignment: .leading)
                         .padding(.leading,10)
@@ -57,7 +64,7 @@ struct ItemCell: View {
                     
                     HStack{
                         // Text("\(String(format: "\u{20B9}%.2f", 180.00))")
-                        Text("\u{20B9} \(price)")
+                        Text("\u{20B9} \(item.itemPrice)")
                             .fontWeight(.bold)
                             .font(.subheadline)
                             .padding(.leading,5)
@@ -69,22 +76,35 @@ struct ItemCell: View {
                             .padding(.leading,5)
                         
                     }
+                    
+                    //addedItems = viewModel.checkData(for: item)
                     Button(action: {
-                        didAddCart?()
-                        addedItems += 1
-                        if addedItems > 0 {
-                            withAnimation(.easeIn(duration: 2)) {
-                                switchButton = true
-                            }
-                           
+                      //  didAddCart?()
+                        print("button tapped")
+                        if addedItems == 0 {
+                            addedItems += 1
                         }
+                      //  addedItems += 1
                         
-                    }, label: {
-                        if addedItems != 0{
-                            addedItemButton(title: "\(addedItems) added"){
+                        else if addedItems >= 1 {
+                            withAnimation(.easeInOut) {
                                 showPopup = true
                             }
+                           print(addedItems)
+                        }
+                        print(addedItems)
+                        viewModel.addQuantity(for: item, quantity: addedItems)
+                    }, label: {
+                        if addedItems != 0{
+                            Text("Added \(addedItems)")
+                                    .foregroundColor(.white)
+                                    .fontWeight(.heavy)
+                                    .padding()
+                                    
+                                    .cornerRadius(10)
+                                    .shadow(radius: 10)
                             .frame(width: 169,height: 40)
+                            .background(Color.orange)
                         }
                         else{
                             Text("Add")
@@ -118,19 +138,28 @@ struct ItemCell: View {
                 Color.black.opacity(0.4) // Background overlay
                     .edgesIgnoringSafeArea(.all)
                 
-                PopupView(addedItems: $addedItems, isPresented: $showPopup, options: options)
+                PopupView(addedItems: $addedItems, isPresented: $showPopup, item: $item, options: options)
                     .frame(width: 300, height: 350)
                     .background(Color.white)
                     .cornerRadius(10)
                     .shadow(radius: 20)
             }
-            
         }//ZStack
+        .onAppear {
+           // addedItems = viewModel.checkData(for: item)
+            startTimer()
+        }
+    }
+    
+    private func startTimer() {
+        Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
+            addedItems = viewModel.checkData(for: item)
+        }
     }
 }
 
 struct ItemCell_Previews: PreviewProvider {
     static var previews: some View {
-        ItemCell()
+        ItemCell().environmentObject(MainViewModel())
     }
 }
