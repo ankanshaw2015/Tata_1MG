@@ -39,13 +39,14 @@ struct PrescriptionView: View {
                                 
                             } label: {
                                 VStack(alignment:.leading){
-                                    Image(systemName: "doc.fill")
+                                    Image("lab2")
                                         .resizable()
-                                        .frame(width: 30, height: 50)
+                                        .scaledToFill()
+                                        .frame(width: 70, height: 50)
                                         .padding(.horizontal,20)
                                     
                                     HStack{
-                                        Text("Order \n medicines")
+                                        Text("Order \n medicines ")
                                             .foregroundColor(.black)
                                             .bold()
                                         Spacer()
@@ -67,13 +68,13 @@ struct PrescriptionView: View {
                                     
                                 } label: {
                                     VStack(alignment:.leading){
-                                        Image(systemName: "doc.fill")
+                                        Image("lab1")
                                             .resizable()
-                                            .frame(width: 30, height: 50)
+                                            .frame(width: 70, height: 50)
                                             .padding(.horizontal,20)
                                         
                                         HStack{
-                                            Text("Order \n medicines")
+                                            Text("Book \n Lab Tests")
                                                 .foregroundColor(.black)
                                                 .bold()
                                             Spacer()

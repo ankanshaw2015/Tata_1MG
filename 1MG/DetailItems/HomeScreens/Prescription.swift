@@ -17,9 +17,13 @@ struct Prescription: View {
             print("ss",mainViewModel.show )
         } label: {
             HStack{
-                Image(systemName: "doc.fill")
-                    .padding(5)
-                Text("Order With Prescription")
+                Image("prescription")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: 30)
+                    .cornerRadius(10)
+                    .padding(.leading,10)
+                Text("Order With Prescription ")
                     .foregroundColor(.black)
                 Spacer()
                 Text("Order Now")
@@ -33,7 +37,7 @@ struct Prescription: View {
             }
             //HEnds2
             .padding(.vertical,8)
-            .background(.gray.opacity(0.4))
+            .background(.gray.opacity(0.1))
             .cornerRadius(10)
             .padding(.horizontal,10)
         }

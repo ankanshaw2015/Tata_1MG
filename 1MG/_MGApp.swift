@@ -16,7 +16,9 @@ struct _MGApp: App {
         WindowGroup {
                    NavigationView {
                       // LetsStartView()
-                       MyCartView()
+                       //MyCartView()
+                       HomeView()
+                      // MainTabView()
                    }
                    .environmentObject(view)
                }

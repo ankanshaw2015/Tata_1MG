@@ -14,9 +14,13 @@ struct DetailItemView: View {
     @State var myCart = false
    // @State var add = "Add"
     @State var addedItems = 0
-   @State var itemData:ItemCellData = ItemsFile().itemCellData[0]
+    @State var itemData:ItemCellData //= ItemsFile().itemCellData[0]
     @EnvironmentObject var viewModel:MainViewModel
     var color1 = Color.orange
+    
+    init( itemData : ItemCellData = ItemsFile().itemCellData[0]){
+        self.itemData = itemData
+    }
     
     var body: some View {
         

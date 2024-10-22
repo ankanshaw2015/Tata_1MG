@@ -10,6 +10,8 @@
 		040B87C32CC22B750018926C /* Sunsine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040B87C22CC22B750018926C /* Sunsine.swift */; };
 		040B87C62CC2323E0018926C /* MyCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040B87C52CC2323E0018926C /* MyCartView.swift */; };
 		040B87C82CC233B00018926C /* CartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040B87C72CC233B00018926C /* CartModel.swift */; };
+		041B176F2CC77DD500BC1E34 /* Specialdeals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041B176E2CC77DD400BC1E34 /* Specialdeals.swift */; };
+		041B17712CC78F6400BC1E34 /* PersonalCare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041B17702CC78F6400BC1E34 /* PersonalCare.swift */; };
 		04499FC82CBF8805000F099B /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04499FC72CBF8805000F099B /* HomeModel.swift */; };
 		04499FCA2CBF8869000F099B /* MainHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04499FC92CBF8869000F099B /* MainHomeViewModel.swift */; };
 		04499FCC2CBF88D1000F099B /* NavigationPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04499FCB2CBF88D1000F099B /* NavigationPart.swift */; };
@@ -44,6 +46,7 @@
 		04D5B0752CB3E3F000AFDEE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04D5B0742CB3E3F000AFDEE8 /* Assets.xcassets */; };
 		04D5B0782CB3E3F000AFDEE8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04D5B0772CB3E3F000AFDEE8 /* Preview Assets.xcassets */; };
 		04D861472CC68C28005D0A86 /* Cartbutton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D861462CC68C27005D0A86 /* Cartbutton.swift */; };
+		04D861492CC6CE39005D0A86 /* AnimatedStacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D861482CC6CE39005D0A86 /* AnimatedStacks.swift */; };
 		04EEDE0A2CBFDBB400B2D60E /* LabPackeges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EEDE092CBFDBB400B2D60E /* LabPackeges.swift */; };
 		04EEDE0C2CBFDDBE00B2D60E /* Checking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EEDE0B2CBFDDBE00B2D60E /* Checking.swift */; };
 		04EEDE0E2CC00FC300B2D60E /* Prescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EEDE0D2CC00FC300B2D60E /* Prescription.swift */; };
@@ -53,6 +56,8 @@
 		040B87C22CC22B750018926C /* Sunsine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sunsine.swift; sourceTree = "<group>"; };
 		040B87C52CC2323E0018926C /* MyCartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCartView.swift; sourceTree = "<group>"; };
 		040B87C72CC233B00018926C /* CartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartModel.swift; sourceTree = "<group>"; };
+		041B176E2CC77DD400BC1E34 /* Specialdeals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Specialdeals.swift; sourceTree = "<group>"; };
+		041B17702CC78F6400BC1E34 /* PersonalCare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalCare.swift; sourceTree = "<group>"; };
 		04499FC72CBF8805000F099B /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		04499FC92CBF8869000F099B /* MainHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHomeViewModel.swift; sourceTree = "<group>"; };
 		04499FCB2CBF88D1000F099B /* NavigationPart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationPart.swift; sourceTree = "<group>"; };
@@ -88,6 +93,7 @@
 		04D5B0742CB3E3F000AFDEE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04D5B0772CB3E3F000AFDEE8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		04D861462CC68C27005D0A86 /* Cartbutton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cartbutton.swift; sourceTree = "<group>"; };
+		04D861482CC6CE39005D0A86 /* AnimatedStacks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedStacks.swift; sourceTree = "<group>"; };
 		04EEDE092CBFDBB400B2D60E /* LabPackeges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabPackeges.swift; sourceTree = "<group>"; };
 		04EEDE0B2CBFDDBE00B2D60E /* Checking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checking.swift; sourceTree = "<group>"; };
 		04EEDE0D2CC00FC300B2D60E /* Prescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prescription.swift; sourceTree = "<group>"; };
@@ -154,6 +160,9 @@
 				04615F0D2CC112690005343F /* addedItemButton.swift */,
 				040B87C22CC22B750018926C /* Sunsine.swift */,
 				04D861462CC68C27005D0A86 /* Cartbutton.swift */,
+				04D861482CC6CE39005D0A86 /* AnimatedStacks.swift */,
+				041B176E2CC77DD400BC1E34 /* Specialdeals.swift */,
+				041B17702CC78F6400BC1E34 /* PersonalCare.swift */,
 			);
 			name = CommonUI;
 			sourceTree = "<group>";
@@ -348,6 +357,7 @@
 				048438F52CBD2B8400855020 /* start.swift in Sources */,
 				047AB3802CBFCE6E00F0A8D0 /* ImageScrolls.swift in Sources */,
 				047981DC2CB652EB00B935C0 /* HomeViewModel.swift in Sources */,
+				041B176F2CC77DD500BC1E34 /* Specialdeals.swift in Sources */,
 				04499FCC2CBF88D1000F099B /* NavigationPart.swift in Sources */,
 				040B87C82CC233B00018926C /* CartModel.swift in Sources */,
 				04615F0E2CC112690005343F /* addedItemButton.swift in Sources */,
@@ -364,10 +374,12 @@
 				04AB37AA2CB54AE2008E44DC /* HomeView.swift in Sources */,
 				048438E52CBCE34A00855020 /* ItemCell.swift in Sources */,
 				048438F12CBD289B00855020 /* SignInUPViewModel.swift in Sources */,
+				04D861492CC6CE39005D0A86 /* AnimatedStacks.swift in Sources */,
 				04615F122CC12E920005343F /* ExtraDetails.swift in Sources */,
 				04AB37A82CB54073008E44DC /* EmailSignUpView.swift in Sources */,
 				04EEDE0E2CC00FC300B2D60E /* Prescription.swift in Sources */,
 				047981E82CB6926200B935C0 /* SectionTitleAll.swift in Sources */,
+				041B17712CC78F6400BC1E34 /* PersonalCare.swift in Sources */,
 				048438F32CBD2A0C00855020 /* SignUpView.swift in Sources */,
 				04499FCE2CBF90A9000F099B /* PrescriptionView.swift in Sources */,
 				04D5B0712CB3E3EC00AFDEE8 /* _MGApp.swift in Sources */,

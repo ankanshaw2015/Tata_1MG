@@ -173,7 +173,7 @@ struct MyCartView: View {
             //.background(.blue)
            
         }
-            .navigationTitle("Hello")
+            .navigationTitle("My Cart")
             //scrollview
             
             

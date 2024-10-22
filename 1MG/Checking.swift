@@ -8,15 +8,18 @@
 import SwiftUI
 
 struct Checking: View {
-    var images = ["pill","doc","doc.fill","pill","doc","doc.fill"]
+    var images = ["women","men","lifestyle","healthCare","organ","specialTest"]
+    var data = ["For Women", "For Men", "Lifestyle \n CheckUps","Health Concerns","By Organs","Special Tests"]
+    var dataImage = ["p1","p2","p3","p4","p5","p6"]
+    
   @State  var selected = 0
     var body: some View {
         VStack{
             
-            ScrollView(.horizontal){
+            ScrollView(.horizontal, showsIndicators: false){
                 HStack{
                     ForEach(0..<6){index in
-                        LabPackeges()
+                        LabPackeges(data: data[index], image: dataImage[index])
                             .onTapGesture {
                                 withAnimation(.linear) {
                                     selected = index
@@ -32,18 +35,21 @@ struct Checking: View {
                     NavigationLink(destination: {
                         
                     }) {
-                        Image(systemName: images[index])
+                        Image(images[index])
+                            .resizable()
+                            .scaledToFit()
                             .tag(index)
-                            .foregroundColor(.black)
-                            .frame(width: 390, height: 100)
-                            .background(.blue)
+                            //.foregroundColor(.black)
+                            .frame(width: 390, height: 250)
+                            //.background(.blue)
                     }
                     
                 }
                 }
-            .tabViewStyle(PageTabViewStyle())
+            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
             
-            .frame(height: 110)
+            
+            .frame(height: 180)
          
             
         }

@@ -10,6 +10,7 @@ import Foundation
 class MainViewModel:ObservableObject{
     @Published var show:Bool = false
     @Published var seletectedTab :Int = 0
+    
     @Published var serchText:String = ""
     @Published var cartData: [(item: ItemCellData, quantity: Int)] = [(item:ItemsFile().itemCellData[0] , quantity:1),
                                                                       (item:ItemsFile().itemCellData[1] , quantity: 1)]
