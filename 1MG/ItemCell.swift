@@ -17,6 +17,7 @@ struct ItemCell: View {
     var deliver = "delevery by 11 pm"
     var color1 = Color.orange
     var color2 = Color.white
+    let options = ["1", "2", "3"]
     
     @State var addedItems = 0
     @State var switchButton = false
@@ -25,7 +26,7 @@ struct ItemCell: View {
     @EnvironmentObject var viewModel:MainViewModel
     
     
-    let options = ["1", "2", "3"]
+    
     var body: some View {
         
         ZStack{

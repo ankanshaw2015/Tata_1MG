@@ -8,23 +8,28 @@
 import SwiftUI
 
 struct SpecificItem: View {
-    var data = "Hair Care"
+    var data = " wellness"
+    var image = "pill"
+    
     var body: some View {
         VStack(spacing: 0){
             VStack(){
-                Image("pill")
+                Image(image)
                     .resizable()
                     .padding(3)
             }
             
             .frame(width: 80,height: 100)
             .padding(5)
-            .background(.orange)
+            .background(.orange.opacity(0.3))
             Spacer()
             Text(data)
+                .foregroundColor(.black)
+                //.bold()
+                .font(.caption)
               
         }
-        .frame(width: 85, height: 140)
+        .frame(width: 95, height: 140)
        // .background(.blue)
         .cornerRadius(15)
     }

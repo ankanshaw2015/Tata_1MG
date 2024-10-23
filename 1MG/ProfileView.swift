@@ -22,7 +22,7 @@ struct ProfileView: View {
                 .opacity(0.3)
                 .ignoresSafeArea()
            
-                
+            ScrollView{
                 
                 VStack(alignment: .leading, spacing: 0) {
                     
@@ -35,7 +35,7 @@ struct ProfileView: View {
                         .foregroundColor(.gray)
                     
                     NavigationLink(destination: {
-                         SignInView()
+                        SignInView()
                     }, label: {
                         RoundeButton(title: "Sign in") {
                             
@@ -100,7 +100,7 @@ struct ProfileView: View {
                 .padding(15)
                 // .shadow(color: .gray.opacity(0.3), radius: 2,x: 0,y: 2)
                 
-                
+            }
                 
             }
             
