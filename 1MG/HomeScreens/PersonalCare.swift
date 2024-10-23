@@ -15,7 +15,7 @@ struct PersonalCare: View {
             HStack(spacing: 0){
                 ForEach(0..<4) { index in
                     NavigationLink {
-                        
+                        ProductView()
                     } label: {
                         SpecificItem(data: data[index], image: images[index])
                     }

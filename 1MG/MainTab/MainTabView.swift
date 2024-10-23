@@ -12,23 +12,24 @@ struct MainTabView: View {
     @EnvironmentObject var homeVm : MainViewModel
     var body: some View {
         
-        ZStack{
-           
-            VStack{
-                TabView(selection: $homeVm.seletectedTab){
-                    HomeView().tag(0)
-                    ExploreView().tag(1)
-                    ExploreView().tag(2)
-                    ExploreView().tag(3)
-                    ProfileView().tag(4)
-                }
-                .onAppear{
-                    UIScrollView.appearance().isScrollEnabled = false
-                }
-                .tabViewStyle(.page(indexDisplayMode: .never))
-                .onChange(of: homeVm.seletectedTab, perform: {
-                    newVal in debugPrint(newVal)
-                })
+//        ZStack{
+//
+//
+//            VStack{
+//                TabView(selection: $homeVm.seletectedTab){
+//                    HomeView().tag(0)
+//                    ExploreView().tag(1)
+//                    ExploreView().tag(2)
+//                    ExploreView().tag(3)
+//                    ProfileView().tag(4)
+//                }
+//                .onAppear{
+//                    UIScrollView.appearance().isScrollEnabled = false
+//                }
+//                .tabViewStyle(.page(indexDisplayMode: .never))
+//                .onChange(of: homeVm.seletectedTab, perform: {
+//                    newVal in debugPrint(newVal)
+//                })
                 
                 HStack{
                     Button(action: {
@@ -56,6 +57,7 @@ struct MainTabView: View {
                             withAnimation {
                                 homeVm.seletectedTab = 1
                             }
+                            homeVm.goToPlan = true
                         }}, label: {
                             VStack{
                                 Image(systemName: homeVm.seletectedTab == 1 ? "doc.fill" : "doc")
@@ -73,6 +75,7 @@ struct MainTabView: View {
                             withAnimation {
                                 homeVm.seletectedTab = 2
                             }
+                            homeVm.goToAdd = true
                         }
                     }, label: {
                         Circle()
@@ -99,6 +102,7 @@ struct MainTabView: View {
                             withAnimation {
                                 homeVm.seletectedTab = 3
                             }
+                            homeVm.goToDoc = true
                         }
                     }, label: {
                         VStack{
@@ -135,11 +139,10 @@ struct MainTabView: View {
                 .background(Color.white)
                 .shadow(color: Color.black.opacity(0.2), radius: 4, x: 0, y: -2)
                 .padding(.bottom,20)
-            }
-            .ignoresSafeArea()
+          
         }
     }
-}
+//}
 
 struct MainTabView_Previews: PreviewProvider {
     static var previews: some View {

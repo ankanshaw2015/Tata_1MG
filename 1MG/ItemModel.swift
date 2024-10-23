@@ -68,5 +68,46 @@ class ItemsFile{
     ]
     
     
+    var itemCellData1:[ItemCellData] = [
+        
+        ItemCellData(itemName: "MamaEarth", itemImages: ["mama"], itemPrice: "250.30", deleveryDate: "Delivery by 11pm today"),
+        
+        ItemCellData(itemName: "Move", itemImages: ["move1"], itemPrice: "180.30", deleveryDate: "Delivery by 11pm today"),
+        
+        ItemCellData(itemName: "Pill", itemImages: ["pill"], itemPrice: "150.30", deleveryDate: "Delivery by 11pm today"),
+    
+        ItemCellData(itemName: "Azithromycin", itemImages: ["azit1","azit2","azit3"], itemPrice: "150.30", deleveryDate: "Delivery by 11pm today"),
+    
+        ItemCellData(itemName: "Vicks", itemImages: ["viks1","viks2","viks3"], itemPrice: "122.70", deleveryDate: "Delivery by 11pm today"),
+    
+       
+        
+        ItemCellData(itemName: "Sunscreen", itemImages: ["sunscreen"], itemPrice: "260.30", deleveryDate: "Delivery by 11pm today"),
+    ]
+    
+    var itemCellData2:[ItemCellData] = [
+        
+        ItemCellData(itemName: "Azithromycin", itemImages: ["azit1","azit2","azit3"], itemPrice: "150.30", deleveryDate: "Delivery by 11pm today"),
+    
+        ItemCellData(itemName: "Vicks", itemImages: ["viks1","viks2","viks3"], itemPrice: "122.70", deleveryDate: "Delivery by 11pm today"),
+    
+       
+        
+        ItemCellData(itemName: "Sunscreen", itemImages: ["sunscreen"], itemPrice: "260.30", deleveryDate: "Delivery by 11pm today"),
+        
+        ItemCellData(itemName: "MamaEarth", itemImages: ["mama"], itemPrice: "250.30", deleveryDate: "Delivery by 11pm today"),
+        
+        ItemCellData(itemName: "Move", itemImages: ["move1"], itemPrice: "180.30", deleveryDate: "Delivery by 11pm today"),
+        
+        ItemCellData(itemName: "Pill", itemImages: ["pill"], itemPrice: "150.30", deleveryDate: "Delivery by 11pm today"),
+    
+        ItemCellData(itemName: "Azithromycin", itemImages: ["azit1","azit2","azit3"], itemPrice: "150.30", deleveryDate: "Delivery by 11pm today"),
+    
+        ItemCellData(itemName: "Vicks", itemImages: ["viks1","viks2","viks3"], itemPrice: "122.70", deleveryDate: "Delivery by 11pm today"),
+    
+       
+        
+        ItemCellData(itemName: "Sunscreen", itemImages: ["sunscreen"], itemPrice: "260.30", deleveryDate: "Delivery by 11pm today"),
+    ]
     
 }

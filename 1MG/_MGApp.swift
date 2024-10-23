@@ -19,6 +19,7 @@ struct _MGApp: App {
                        //MyCartView()
                        HomeView()
                       // MainTabView()
+                       //ProductView()
                    }
                    .environmentObject(view)
                }

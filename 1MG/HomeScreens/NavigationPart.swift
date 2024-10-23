@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct NavigationPart: View {
+    @EnvironmentObject var viewModel:MainViewModel
     var body: some View {
         HStack(alignment: .center,spacing: 0){
             Circle()
@@ -24,7 +25,7 @@ struct NavigationPart: View {
                 .padding( .top,18)
                 .padding( .leading,18)
             
-            Text("Banglore")
+            Text(viewModel.deliveringTo)
                 .font(.system(size: 18))
                 .fontWeight(.bold)
                 .font(.callout)
@@ -42,5 +43,6 @@ struct NavigationPart: View {
 struct NavigationPart_Previews: PreviewProvider {
     static var previews: some View {
         NavigationPart()
+            .environmentObject(MainViewModel())
     }
 }

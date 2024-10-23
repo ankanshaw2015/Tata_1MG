@@ -12,58 +12,73 @@ struct HomeView: View {
     @EnvironmentObject var mainViewModel:MainViewModel
     @State var showPrescription:Bool = false
     var items = ItemsFile().itemCellData
+    @State var navigateToPlans = false
+    
+   // @State var navigateToLab = false
     @State var text :String = ""
     
     var body: some View {
         NavigationView {
             ZStack{
-                LinearGradient(colors: [Color.orange.opacity(0.1),Color.white], startPoint: .top, endPoint: .bottom)
-                    .ignoresSafeArea()
+              
+                    //.ignoresSafeArea()
                 VStack{
+                    ZStack{
                     ScrollView{
                         VStack(alignment:.leading){
                             HStack{
+                                NavigationLink {
+                                    CitySelectionView()
+                                } label: {
+                                    
+                                    NavigationPart()
+                                }
                                 
-                                NavigationPart()
                                 .padding(.bottom,40)
                                 Spacer()
-                                CartButton()
-                                    .padding(.top,10)
+                                NavigationLink {
+                                    
+                                } label: {
+                                    CartButton()
+                                        .padding()
+                                }
+
+                               
                                 
                             }
-                            .frame(width: 380, height: 100)
+                            .frame(width: 380, height: 30)
                             //.background(.blue)
                             //.padding(.trailing,20)
-                           // .padding()
-                           // .frame(maxWidth: .infinity,maxHeight: 20)
+                            // .padding()
+                            // .frame(maxWidth: .infinity,maxHeight: 20)
                             
                             VStack{
                                 Text(" ")
                             }
                             
                             VStack{
-                             
-                               //  02240919191
-                                   SearchButton(text: $text)
+                                
+                                //  02240919191
+                                SearchButton(text: $text)
+                                    .padding()
+                                
+                                
+                                  AnimatedStacks()
+                                   .padding(.horizontal,10)
+                                
+                                                            Prescription()
+                                                                .padding(.vertical)
                                 
                                 
                                 
-                                //  AnimatedStacks()
-                                //   .padding(.horizontal,10)
-                                
-                                //                            Prescription()
-                                //                                .padding(.vertical)
                                 
                                 
+                                  SectionTitleAll(title: "Special Deals", titleAll: "see more")
+                                  Specialdeals()
                                 
+                                                                SectionTitleAll(title: "Hair & skin suppliments", titleAll: "see all")
+                                                                    .padding(5)
                                 
-                                
-                                //  SectionTitleAll(title: "Special Deals", titleAll: "see more")
-                                //  Specialdeals()
-                                
-//                                SectionTitleAll(title: "Hair & skin suppliments", titleAll: "see all")
-//                                    .padding(5)
-
                                 
                                 ScrollView(.horizontal){
                                     HStack{
@@ -91,13 +106,14 @@ struct HomeView: View {
                                 
                                 SectionTitleAll(title: "Personal care", titleAll: "")
                                     .padding(5)
+                                PersonalCare()
                                 
                                 
                             }
                             SectionTitleAll(title:"Lab testes and packages")
                             
                             
-                         //   Checking()
+                               Checking()
                             
                             SectionTitleAll(title:"Lab testes and packages")
                             
@@ -132,22 +148,51 @@ struct HomeView: View {
                                     .scaledToFit()
                                     .padding(.vertical)
                             }
-
+                            
+                            Sunsine()
+                            
                         }
                         
-                    }//ScrollView
-                    if mainViewModel.show {
-                        Color.black.opacity(0.4) // Background overlay
-                            .edgesIgnoringSafeArea(.all)
-                        PrescriptionView()
-                            .padding(.top,650)
-                            .transition(.move(edge: .bottom))
-                        //   .animation(.easeInOut)
                     }
-                    
+                   
+                        if mainViewModel.seletectedTab == 4 {
+                            ProfileView()
+                        }
+                       
                 }
+
+                    MainTabView()
+                }//VStack
+                if mainViewModel.show {
+                    Color.black.opacity(0.4) // Background overlay
+                        .edgesIgnoringSafeArea(.all)
+                    PrescriptionView()
+                        .padding(.top,650)
+                        .transition(.move(edge: .bottom))
+                       .animation(.easeInOut)
+                }
+              
             }
             //ZStack
+            .background(  LinearGradient(colors: [Color.orange.opacity(0.1),Color.white], startPoint: .top, endPoint: .bottom)
+            ) .ignoresSafeArea(edges: .bottom)
+            
+                .background(
+                    NavigationLink(destination: HealthPlansView(),
+                                   isActive: $mainViewModel.goToPlan) {
+                                EmptyView()
+                            })
+           
+                .background(
+                    NavigationLink(destination: AddvertiseView(),
+                                   isActive: $mainViewModel.goToAdd) {
+                                EmptyView()
+                            })
+                .background(
+                    NavigationLink(destination: HealthPlansView(),
+                                   isActive: $mainViewModel.goToDoc) {
+                                EmptyView()
+                            })
             
         }//Navigation
     }//Body
