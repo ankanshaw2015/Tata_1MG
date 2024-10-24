@@ -78,7 +78,7 @@ struct AnimatedStacks: View {
            //    withAnimation(.linear) {
                   
                    index = (index + 1) % images.count
-               animate.toggle()
+               //animate.toggle()
             //   }
            }
        }

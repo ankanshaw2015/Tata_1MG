@@ -188,22 +188,12 @@ struct MyCartView: View {
                    
                 
             }//zstack
-            
-            .navigationTitle("My Cart")
+
         }
         //.navigationBarHidden(true)
         //navigationview
     }
-    
-    
-//    func totalBill() -> Double{
-//
-//        let sum = (0..<counts.count).reduce(0) { (result, index) in
-//            result + (Double(cartData[index].itemPrice)! * Double(counts[index]))
-//                   }
-//
-//        return sum
-//    }
+
 }
 
 struct MyCartView_Previews: PreviewProvider {

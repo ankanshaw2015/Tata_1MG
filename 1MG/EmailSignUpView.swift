@@ -19,33 +19,24 @@ struct EmailSignUpView: View {
             LinearGradient(colors: [Color.orange,Color.white], startPoint: .top, endPoint: .bottom)
             VStack {
 
-                Spacer()
                 VStack(alignment: .leading, spacing: 1) {
 
                    // Text("Sign in with email")
-                    Text("Sign in using email")
-                        .font(.title2)
-                        .bold()
-
-                    Text("If you’re a new user, please sign in with your email here:")
-                        .font(.subheadline)
-                    NavigationLink {
-
-                    } label: {
-                        Text("New user sign in")
-
-                            .font(.headline)
-
-                            .foregroundColor(.blue)
-
-                            .underline()
-                    }
+                    Image("onBoard_2")
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(width: 250, height: 250)
 
 
                 }
+                
 
                 .padding(.horizontal)
-                Spacer().frame(height: 60)
+               // Spacer()
+                
+                Text("Sign in to continue")
+                                   .font(.system(size: 22, weight: .bold, design: .rounded))
+                                   .padding(.bottom, 10)
 
                 TextField("Enter your email id", text: $email)
 
@@ -89,15 +80,29 @@ struct EmailSignUpView: View {
                 })
                 .padding(.horizontal)
                 
-                Text(a)
+                NavigationLink {
+                    SignUpView()
+                    
+                } label: {
+                    HStack {
+                        Text("New User?")
+                            .font(.system(size: 14))
+                        Text("Sign Up")
+                            .font(.system(size: 14, weight: .bold))
+                            .foregroundColor(Color.orange)
+                    }
+                }
+                  .padding(.top, 10)
+                
+                Text(userViewModel.text)
                     .foregroundColor(.red)
-                    .font(.subheadline)
-                    .padding(5)
-
-                Spacer()
+                    .bold()
+                    .padding(.top)
+               
+ 
                 
             }
-
+            
         }
         .ignoresSafeArea()
     }
@@ -112,6 +117,7 @@ struct EmailSignUpView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView{
             EmailSignUpView()
+                .environmentObject(UserViewModel())
         }
         .navigationBarBackButtonHidden(false)
         

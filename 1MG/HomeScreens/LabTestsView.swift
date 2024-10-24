@@ -1,16 +1,14 @@
 //
-//  HealthPlansView.swift
+//  LabTestsView.swift
 //  1MG
 //
 //  Created by Yashom on 23/10/24.
 //
 
-
-
 import SwiftUI
 
-struct HealthPlansView: View {
-    @EnvironmentObject var mainViewModel : MainViewModel
+struct LabTestsView: View {
+    @EnvironmentObject var mainViewModel:MainViewModel
     
     var body: some View {
         NavigationView {
@@ -19,12 +17,12 @@ struct HealthPlansView: View {
                     
                     // Title and Subheading
                     VStack(alignment: .leading, spacing: 5) {
-                        Text("Health Plans")
+                        Text("Lab Tests")
                             .font(.largeTitle)
                             .fontWeight(.bold)
                             .foregroundColor(.black)
                         
-                        Text("Most upvoted plans, sessions and articles for you!")
+                        Text("Most upvoted lab tests, sessions and articles for you!")
                             .font(.title3)
                             .foregroundColor(.gray)
                     }
@@ -33,7 +31,7 @@ struct HealthPlansView: View {
                     // Horizontal Scrollable Buttons
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 10) {
-                            ForEach(["Diabetes", "Insurance", "Surgical care", "Mental Wellness"], id: \.self) { category in
+                            ForEach(["Blood Test", "Urine Test", "Allergy Test", "Hormone Test"], id: \.self) { category in
                                 Button(action: {
                                     // Handle button action
                                 }) {
@@ -53,16 +51,17 @@ struct HealthPlansView: View {
                         .frame(height: 60)  // Ensure a fixed height for the button row
                     }
                     
-                    
                     // Promotional Card 1: Toothsi by MakeO
                     VStack(alignment: .leading, spacing: 10) {
-                        Image("toothsi")  // Replace with actual image asset
+                       
+                        
+                        Image("beato")  // Replace with actual image asset
                             .resizable()
                             .aspectRatio(contentMode: .fill)
                             .frame(height: 180)
                             .cornerRadius(10)
                         
-                        Text("Toothsi by MakeO")
+                        Text("Toothsi by MakeO - Lab Test Options")
                             .font(.headline)
                         
                         HStack {
@@ -83,9 +82,9 @@ struct HealthPlansView: View {
                             }
                             
                             Button(action: {
-                                // Get custom plans action
+                                // Get custom tests action
                             }) {
-                                Text("Get custom plans")
+                                Text("Get custom tests")
                                     .font(.system(size: 16))
                                     .frame(maxWidth: .infinity)
                                     .padding()
@@ -99,15 +98,15 @@ struct HealthPlansView: View {
                     
                     // Promotional Card 2: Twin Health
                     VStack(alignment: .leading, spacing: 10) {
-                        Image("twino")  // Replace with actual image asset
+                    
+                        Image("birla_firtility")  // Replace with actual image asset
                             .resizable()
                             .aspectRatio(contentMode: .fill)
                             .frame(height: 180)
                             .cornerRadius(10)
                         
-                        Text("Stop your Diabetes Medicines & Reverse Diabetes with Twin Health")
+                        Text("Birla Fertility & IVF Lab Tests")
                             .font(.headline)
-                            .padding(.top, 5)
                         
                         Button(action: {
                             // Enroll now action
@@ -123,16 +122,17 @@ struct HealthPlansView: View {
                     }
                     .padding(.horizontal)
                     
+                    // Promotional Card 3: Birla Fertility & IVF
                     VStack(alignment: .leading, spacing: 10) {
-                        Image("birla_firtility")  // Replace with actual image asset
+                        Image("twino")  // Replace with actual image asset
                             .resizable()
                             .aspectRatio(contentMode: .fill)
                             .frame(height: 180)
                             .cornerRadius(10)
                         
-                        Text("Birla Fertility & IVF")
+                        Text("Get your Lab Tests Done with Twin Health")
                             .font(.headline)
-                        
+                            .padding(.top, 5)
                         HStack {
                             Button(action: {
                                 // Know more action
@@ -151,9 +151,9 @@ struct HealthPlansView: View {
                             }
                             
                             Button(action: {
-                                // Get custom plans action
+                                // Get custom tests action
                             }) {
-                                Text("Get custom plans")
+                                Text("Get custom tests")
                                     .font(.system(size: 16))
                                     .frame(maxWidth: .infinity)
                                     .padding()
@@ -165,14 +165,15 @@ struct HealthPlansView: View {
                     }
                     .padding(.horizontal)
                     
+                    // Promotional Card 4: Beato
                     VStack(alignment: .leading, spacing: 10) {
-                        Image("beato")  // Replace with actual image asset
+                        Image("toothsi")  // Replace with actual image asset
                             .resizable()
                             .aspectRatio(contentMode: .fill)
                             .frame(height: 180)
                             .cornerRadius(10)
                         
-                        Text("Discover a life beyond diets, meds, and insulin with our care program")
+                        Text("Beato: Comprehensive Lab Tests")
                             .font(.headline)
                         
                         HStack {
@@ -193,9 +194,9 @@ struct HealthPlansView: View {
                             }
                             
                             Button(action: {
-                                // Get custom plans action
+                                // Get custom tests action
                             }) {
-                                Text("Get custom plans")
+                                Text("Get custom tests")
                                     .font(.system(size: 16))
                                     .frame(maxWidth: .infinity)
                                     .padding()
@@ -216,9 +217,8 @@ struct HealthPlansView: View {
     }
 }
 
-
-struct HealthPlansView_Previews: PreviewProvider {
+struct LabTestsView_Previews: PreviewProvider {
     static var previews: some View {
-        HealthPlansView()
+        LabTestsView()
     }
 }

@@ -17,7 +17,8 @@ struct ProductParts: View {
             VStack{
                 Image(image)
                     .resizable()
-                    .frame(width: 100, height: 100)
+                    .scaledToFit()
+                    .frame(width: 80, height: 80)
                     .cornerRadius(15)
                 Text(text)
                     .foregroundColor(.black)

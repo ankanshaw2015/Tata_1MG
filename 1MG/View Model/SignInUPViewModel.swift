@@ -11,29 +11,37 @@ import Combine
 class UserViewModel: ObservableObject {
     @Published var view:EmailSignUpView = EmailSignUpView()
     @Published var users: [User] = []
-    @Published var isLoggedIn: Bool = false
+    @Published var isLoggedIn: Bool = true
+    @Published var text = ""
+    @Published var logginUser : User = User(username: "Ankan", password: "1234")
 
     func signUp(username: String, password: String) {
         let newUser = User(username: username, password: password)
         users.append(newUser)
         isLoggedIn = true
+        logginUser = newUser
     }
 
     func logIn(username: String, password: String) {
-//        if let _ = users.first(where: { $0.username == username && $0.password == password }) {
-//            isLoggedIn = true
-//        }
-        print("process")
-        if username.isEmpty || password.isEmpty{
-            view.a = "Email or Password cannot be empty"
-        }
-        else if username == password{
+        if let user = users.first(where: { $0.username == username && $0.password == password }) {
             isLoggedIn = true
-            print("done")
+            logginUser = user
         }
         else{
-            view.a = "Email or password is not valid"
+            text = "You are not registered yet"
         }
+        
+//        print("process")
+//        if username.isEmpty || password.isEmpty{
+//            view.a = "Email or Password cannot be empty"
+//        }
+//        else if username == password{
+//            isLoggedIn = true
+//            print("done")
+//        }
+//        else{
+//            view.a = "Email or password is not valid"
+//        }
     }
 
     func logOut() {

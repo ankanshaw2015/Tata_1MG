@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ItemCellData :Identifiable,Hashable{
+class ItemCellData :Identifiable,Hashable,Codable{
     static func == (lhs: ItemCellData, rhs: ItemCellData) -> Bool {
         return lhs.id == rhs.id
     }
@@ -21,6 +21,7 @@ class ItemCellData :Identifiable,Hashable{
     var itemImages:[String]
     var itemPrice:String
     var deleveryDate:String = "Delivery by 11pm today"
+    var itemType: String
     var itemInformation:String = """
     
 Product InforMation:
@@ -40,11 +41,12 @@ While generally considered safe when used as directed, some potential side effec
 Allergic reactions (rare)
 Nausea or vomiting (if taken in large doses)
 """
-    init(itemName: String, itemImages: [String], itemPrice: String, deleveryDate: String) {
+    init(itemName: String, itemImages: [String], itemPrice: String,itemType: String = "Medicine", deleveryDate: String) {
         self.itemName = itemName
         self.itemImages = itemImages
         self.itemPrice = itemPrice
         self.deleveryDate = deleveryDate
+        self.itemType = itemType
     }
     
 }
@@ -52,6 +54,9 @@ Nausea or vomiting (if taken in large doses)
 
 
 class ItemsFile{
+    
+    var items : [ItemCellData]?
+    
     var itemCellData:[ItemCellData] = [
     
         ItemCellData(itemName: "Azithromycin", itemImages: ["azit1","azit2","azit3"], itemPrice: "150.30", deleveryDate: "Delivery by 11pm today"),
@@ -110,4 +115,23 @@ class ItemsFile{
         ItemCellData(itemName: "Sunscreen", itemImages: ["sunscreen"], itemPrice: "260.30", deleveryDate: "Delivery by 11pm today"),
     ]
     
+//    func loadData() {
+//            if let url = Bundle.main.url(forResource: "items", withExtension: "json") {
+//                do {
+//                    let data = try Data(contentsOf: url)
+//                    let decoder = JSONDecoder()
+//                    let response = try decoder.decode([String: [ItemCellData]].self, from: data)
+//                    items = response["itemCellData"] ?? []
+//                } catch {
+//                    print("Failed to decode JSON: \(error)")
+//                }
+//            }
+//        }
+    
+    
+    
+}
+
+struct ItemList: Codable {
+    var itemCellData: [ItemCellData]
 }

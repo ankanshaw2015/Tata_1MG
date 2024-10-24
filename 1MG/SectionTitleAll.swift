@@ -10,20 +10,31 @@ import SwiftUI
 struct SectionTitleAll: View {
     @State var title: String = " Title"
     @State var titleAll: String = "View All"
-    var didTap : (()->())?
-    
+    @EnvironmentObject var viewModel:MainViewModel
+   
     var body: some View {
         
         HStack{
             Text(title)
-                .font(.system(size: 26))
+                .font(.system(size: 22))
                 .foregroundColor(.primary)
+                .bold()
+                .bold()
             
             Spacer()
             
-            Text(titleAll)
-                .font(.system(size: 14))
-                .foregroundColor(.green)
+            
+            
+            NavigationLink {
+             SeeAllView()
+                
+            } label: {
+                Text(titleAll)
+                    .font(.system(size: 14))
+                    .foregroundColor(.green)
+                    .bold()
+            }
+
             
         }
         .frame(height: 40)
@@ -34,5 +45,6 @@ struct SectionTitleAll_Previews: PreviewProvider {
     static var previews: some View {
         SectionTitleAll()
             .padding(20)
+            .environmentObject(MainViewModel())
     }
 }

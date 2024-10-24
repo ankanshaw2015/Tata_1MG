@@ -23,9 +23,7 @@ struct DetailItemView: View {
     }
     
     var body: some View {
-        
-        
-        NavigationView{
+   
             ZStack{
                 ScrollView{
                     VStack(alignment:.leading){
@@ -132,27 +130,7 @@ struct DetailItemView: View {
                         
                         HStack{
                             Spacer()
-//                            if addedItems == 0{
-//
-//                                RoundeButton(title: "Add"){
-//                                    addedItems += 1
-//                                }
-//                                .frame(width: 190, height: 40)
-//                                .padding(10)
-//                                .padding(.horizontal)
-//                            }
-//                            else {
-//                                addedItemButton(title: "\(addedItems) added"){
-//                                    showPopup = true
-//                                }
-//                                .frame(width: 190, height: 40)
-//                                .padding(10)
-//                                .padding(.horizontal)
-//
-//
-//
-//                            }
-                            
+                      
                             Button(action: {
                               //  didAddCart?()
                                 print("button tapped")
@@ -229,13 +207,15 @@ struct DetailItemView: View {
                     
                     
                 }//scrollview
-               
-               
+                .navigationTitle("Details")
                 
-                .navigationBarItems(trailing: CartButton())
-                
+                .navigationBarItems(trailing: NavigationLink(destination: {
+                    viewModel.cartview
+                }, label: {
+                    CartButton()
+                }))
                
-                
+            
                 if showPopup {
                     Color.black.opacity(0.4) // Background overlay
                         .edgesIgnoringSafeArea(.all)
@@ -246,17 +226,11 @@ struct DetailItemView: View {
                         .cornerRadius(10)
                         .shadow(radius: 20)
                 }
-                    
-                
+
+               
+            
             }//Zstack
-            .navigationTitle("")
-            .navigationBarItems(trailing: Button(action: {
-                
-            }, label: {
-                Image(systemName: "arrowshape.turn.up.right.fill")
-            }))
-            .navigationBarHidden(false)
-        }//navigationView
+      
         .onAppear {
             addedItems = viewModel.checkData(for: itemData)
         }

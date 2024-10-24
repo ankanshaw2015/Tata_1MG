@@ -22,7 +22,7 @@ struct PersonalCare: View {
                     Spacer()
                 }
             }
-            .padding(5)
+           // .padding(5)
             
             HStack(spacing: 0){
                 ForEach(4..<8) { index in
@@ -34,8 +34,9 @@ struct PersonalCare: View {
                     Spacer()
                 }
             }
-            .padding(5)
+           // .padding(.horizontal)
         }
+        
         
     }
 }

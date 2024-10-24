@@ -15,12 +15,13 @@ struct _MGApp: App {
       
         WindowGroup {
                    NavigationView {
-                      // LetsStartView()
+                       LetsStartView()
                        //MyCartView()
-                       HomeView()
+                       //HomeView()
                       // MainTabView()
                        //ProductView()
                    }
+                   .environmentObject(viewModel)
                    .environmentObject(view)
                }
     }

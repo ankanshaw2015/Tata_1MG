@@ -116,6 +116,9 @@ struct ProductItems: View {
             .background(.white)
             .cornerRadius(15)
             .shadow(color: .gray, radius: 4, x: 0, y: 3)
+            .onAppear{
+                startTimer()
+            }
             
             if showPopup {
                 Color.black.opacity(0.4) // Background overlay
@@ -128,6 +131,11 @@ struct ProductItems: View {
                     .shadow(radius: 20)
             }
             
+        }
+    }
+    private func startTimer() {
+        Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
+            addedItems = viewModel.checkData(for: item)
         }
     }
 }
