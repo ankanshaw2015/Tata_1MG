@@ -40,7 +40,8 @@ struct Specialdeals: View {
             .offset(x: -CGFloat(currentIndex ) * 300) // Offset to show the current image
             .animation(.easeInOut(duration: 0.5), value: currentIndex)
         }
-        .frame(height: 200)
+        .frame(height: 145)
+        //.background(.blue)
         
         .onAppear {
             startTimer()

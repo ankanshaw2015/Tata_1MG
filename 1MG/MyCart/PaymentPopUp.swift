@@ -55,14 +55,17 @@ struct PaymentPopUp: View {
                 }
                 Spacer()
                 
-                Button("Continue") {
-                    
+                NavigationLink(destination:
+                            CheckoutView(totalAmount: viewModel.totalBill())
+                ) {
+                    Text("Continue")
+                     .foregroundColor(.white)
+                     .bold()
+                     .frame(width: 140, height: 40)
+                     .background(.orange)
+                     .cornerRadius(10)
                 }
-                .foregroundColor(.white)
-                .bold()
-                .frame(width: 140, height: 40)
-                .background(.orange)
-                .cornerRadius(10)
+               
             }
             .padding()
             //.padding(.bottom)

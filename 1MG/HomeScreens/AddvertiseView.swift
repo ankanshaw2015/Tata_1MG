@@ -10,8 +10,8 @@ import SwiftUI
 struct AddvertiseView: View {
     var body: some View {
         ZStack{
-            Color.green
-            Text("addView")
+            Image("add")
+                .resizable()
         }
     }
 }

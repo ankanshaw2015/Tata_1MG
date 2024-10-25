@@ -45,10 +45,11 @@ struct ProfileView: View {
                                 userViewModel.isLoggedIn = false
                             }
                             .frame(width: 370, height: 50)
+                            .padding(.vertical,15)
                         }
                         
                         
-                        .padding(.vertical,10)
+                       
                     }
                     
                     
@@ -70,10 +71,11 @@ struct ProfileView: View {
                                 
                             }
                             .frame(width: 370, height: 50)
+                            .padding(.vertical,15)
                         })
                         
                         
-                        .padding(.vertical,10)
+                       
                     }
                     
                 }
@@ -81,6 +83,7 @@ struct ProfileView: View {
                     List {
                         ForEach((0..<mainList.count),id: \.self) { data in
                             NavigationLink {
+                                OrderedListView()
                                 
                             } label: {
                                 HStack{
@@ -105,7 +108,7 @@ struct ProfileView: View {
                     List {
                         ForEach(about,id: \.self) { data in
                             NavigationLink {
-                                
+                                OrderedListView()
                             } label: {
                                 HStack{
                                     // Image(systemName: icons)
@@ -131,9 +134,10 @@ struct ProfileView: View {
                 }
                 .padding(15)
                 // .shadow(color: .gray.opacity(0.3), radius: 2,x: 0,y: 2)
-                .onDisappear{
-                    mainViewModel.seletectedTab = 0
-                }
+                
+//                .onDisappear{
+//                    mainViewModel.seletectedTab = 0
+//                }
                 
             }
                 

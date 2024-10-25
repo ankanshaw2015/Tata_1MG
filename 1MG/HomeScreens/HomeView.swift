@@ -58,29 +58,30 @@ struct HomeView: View {
                                     Prescription()
                                         .padding(.vertical)
 
-                                    SectionTitleAll(title: "Special Deals", titleAll: "see more")
+                                    Title(title:"Special Deals")
                                         .padding(.horizontal,20)
+                                    
                                     Specialdeals()
                                         .padding(.horizontal,10)
 
-                                    SectionTitleAll(title: "Hair & skin suppliments", titleAll: "see all")
+                                    SectionTitleAll(title: "Hair & skin suppliments", titleAll: "see all",type: "Hair Care")
                                         .padding(.horizontal,10)
 
 
-                                    ListOfItems(items: items)
-                                    .padding(.horizontal,20)
+//                                    ListOfItems(items: items)
+//                                    .padding(.horizontal,20)
 
                                     Image("a5")
                                         .resizable()
                                         .scaledToFit()
                                         .padding(.vertical)
 
-                                    SectionTitleAll(title: "Personal care", titleAll: "")
+                                    Title(title: "Personal Care",titleAll: "see all")
                                         .padding(5)
                                         .padding(.horizontal,10)
                                     PersonalCare()
                                 }
-                                SectionTitleAll(title:"Lab testes and packages")
+                                Text("Lab testes and packages")
                                     .padding(.horizontal,20)
 
                                 Checking()
@@ -102,6 +103,9 @@ struct HomeView: View {
                                         .scaledToFit()
                                         .padding(.vertical)
                                 }
+                               
+                               SectionTitleAll(title: "Face Care products", titleAll: "see all",type: "Facecare")
+                                   .padding(.horizontal,10)
 
                                 Sunsine()
 
@@ -114,27 +118,16 @@ struct HomeView: View {
                         }
 
                     }//2ndZstack
-                  //  .background(.blue)
-
                     MainTabView()
                 }//VStack
-               // .frame(width: 390, height: 859,alignment: .topLeading)
-               // .background(.green)
                 .ignoresSafeArea()
-                
-                if mainViewModel.show {
-                    Color.black.opacity(0.4) // Background overlay
-                        .edgesIgnoringSafeArea(.all)
-                    PrescriptionView()
-                        .padding(.top,500)
-                        .transition(.move(edge: .bottom))
-                        .animation(.easeInOut)
-                }
 
             } //NavigationView
 
             .navigationBarTitle("", displayMode: .inline)
             .navigationBarHidden(true)
+                
+                
             
             .background(  LinearGradient(colors: [Color.orange.opacity(0.1),Color.white], startPoint: .top, endPoint: .bottom)
                 .ignoresSafeArea()
@@ -157,6 +150,17 @@ struct HomeView: View {
                                    isActive: $mainViewModel.goToDoc) {
                                        EmptyView()
                                    })
+                
+                
+                if mainViewModel.show {
+                    Color.black.opacity(0.4) // Background overlay
+                        .edgesIgnoringSafeArea(.all)
+                    PrescriptionView()
+                        .padding(.top,570)
+                        .transition(.move(edge: .bottom))
+                        .animation(.easeInOut)
+                }
+
                 
         }//ZStack
     }//Body

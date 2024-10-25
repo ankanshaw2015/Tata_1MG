@@ -13,6 +13,7 @@ struct EmailSignUpView: View {
     @State private var password:String = ""
     @EnvironmentObject var userViewModel: UserViewModel
     @State var logging : Bool = true
+    @State var showPass = false
 
     var body: some View {
         ZStack{
@@ -20,8 +21,6 @@ struct EmailSignUpView: View {
             VStack {
 
                 VStack(alignment: .leading, spacing: 1) {
-
-                   // Text("Sign in with email")
                     Image("onBoard_2")
                                             .resizable()
                                             .scaledToFit()
@@ -38,27 +37,41 @@ struct EmailSignUpView: View {
                                    .font(.system(size: 22, weight: .bold, design: .rounded))
                                    .padding(.bottom, 10)
 
-                TextField("Enter your email id", text: $email)
-
-                    .padding()
-
-                    .background(Color(UIColor.systemGray6))
-
-                    .cornerRadius(10)
-
-                    .padding(.horizontal)
-
-                Spacer().frame(height: 10)
-
-                SecureField("Enter your password", text: $password)
-
-                    .padding()
-
-                    .background(Color(UIColor.systemGray6))
-
-                    .cornerRadius(10)
-
-                    .padding(.horizontal)
+                VStack(spacing: 15) {
+ 
+                    TextField("Enter email", text: $email)
+                        .padding(5)
+                        .frame(height: 40)
+                        .background(RoundedRectangle(cornerRadius: 20).stroke())
+                    
+                    HStack{
+                        if showPass {
+                            TextField("Enter password", text: $password)
+                                .padding(5)
+                                .frame(height: 40)
+                        }
+                        else{
+                            SecureField("Enter password", text: $password)
+                                .padding(5)
+                                .frame(height: 40)
+                        }
+                        
+                        
+                            
+                        Spacer()
+                        
+                      
+                            Image(systemName: showPass ? "eye.fill" : "eye.slash")
+                                .padding(.trailing)
+                                .onTapGesture {
+                                    showPass.toggle()
+                                }
+                     
+                    }
+                    .background(RoundedRectangle(cornerRadius: 20).stroke())
+                    
+                }
+                .padding(.horizontal, 20)
 
                 Spacer().frame(height: 20)
                 

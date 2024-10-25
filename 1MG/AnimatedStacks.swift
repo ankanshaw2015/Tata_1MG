@@ -71,10 +71,13 @@ struct AnimatedStacks: View {
         .frame(width: 380,height: 100)
         //.background(Color.gray)
         .onAppear{startTimer()}
+        .onDisappear{
+            timer?.invalidate()
+        }
     }
     
     private func startTimer() {
-           timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { _ in
+           timer = Timer.scheduledTimer(withTimeInterval:  3, repeats: true) { _ in
            //    withAnimation(.linear) {
                   
                    index = (index + 1) % images.count

@@ -14,6 +14,7 @@ struct SignUpView: View {
     @EnvironmentObject var userViewModel:UserViewModel
     @State private var alert = ""
     @Environment(\.presentationMode) var presentationMode
+    @State var showPass = false
     
     var body: some View {
         ZStack {
@@ -35,24 +36,37 @@ struct SignUpView: View {
                     .padding(.bottom, 10)
                 
                 VStack(spacing: 15) {
-                  //  TextField( "Enter name", text: $name)
-                    
+ 
                     TextField("Enter email", text: $email)
                         .padding(5)
                         .frame(height: 40)
                         .background(RoundedRectangle(cornerRadius: 20).stroke())
                     
                     HStack{
+                        if showPass {
+                            TextField("Enter password", text: $password)
+                                .padding(5)
+                                .frame(height: 40)
+                        }
+                        else{
+                            SecureField("Enter password", text: $password)
+                                .padding(5)
+                                .frame(height: 40)
+                        }
                         
-                        SecureField("Enter password", text: $password)
-                            .padding(5)
-                            .frame(height: 40)
-                            .background(RoundedRectangle(cornerRadius: 20).stroke())
                         
+                            
+                        Spacer()
                         
-                        
+                      
+                            Image(systemName: showPass ? "eye.fill" : "eye.slash")
+                                .padding(.trailing)
+                                .onTapGesture {
+                                    showPass.toggle()
+                                }
+                     
                     }
-                    
+                    .background(RoundedRectangle(cornerRadius: 20).stroke())
                     
                 }
                 .padding(.horizontal, 20)
@@ -60,6 +74,9 @@ struct SignUpView: View {
                 Button{
                     if email.isEmpty || password.isEmpty {
                         alert = "email or password cannot be empty"
+                    }
+                    else if !email.contains("@gmail.com"){
+                        alert = "Not a valid mail"
                     }
                         else{
                             userViewModel.signUp(username: email, password: password)

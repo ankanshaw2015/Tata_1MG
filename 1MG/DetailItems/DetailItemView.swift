@@ -44,17 +44,19 @@ struct DetailItemView: View {
                         }//scroll view
                         .padding(10)
                         
-                        VStack(){
+                        VStack(alignment:.leading){
                             Text(itemData.itemName)
                                 .foregroundColor(.black)
                                 .font(.title2)
                                 .bold()
+                                .frame(width: 390, height: 60,alignment: .leading)
                                 .padding(8)
                             
                             Spacer()
                             Text("CompanyInfo")
                                 .foregroundColor(.gray)
                                 .padding(5)
+                                
                             
                         }
                         .frame(width: 380, height: 100,alignment: .topLeading)

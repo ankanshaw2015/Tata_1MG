@@ -21,6 +21,7 @@ class MainViewModel:ObservableObject{
     @Published var serchText:String = ""
     @Published var cartData: [(item: ItemCellData, quantity: Int)] = [(item:ItemsFile().itemCellData[0] , quantity:1),
                                                                       (item:ItemsFile().itemCellData[1] , quantity: 1)]
+    @Published var orderList:[(item: ItemCellData, quantity: Int)] = []
    // @Published var totalBill
     var cartview = MyCartView()
     var homeView = HomeView()

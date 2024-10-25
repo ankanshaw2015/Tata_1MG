@@ -16,9 +16,7 @@ struct MyCartView: View {
     @State var sum  = 0
     
     var body: some View {
-        NavigationView{
-            
-            
+
             ZStack{
                 
                 VStack{
@@ -188,10 +186,6 @@ struct MyCartView: View {
                    
                 
             }//zstack
-
-        }
-        //.navigationBarHidden(true)
-        //navigationview
     }
 
 }

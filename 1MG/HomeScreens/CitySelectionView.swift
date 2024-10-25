@@ -14,6 +14,7 @@ struct CitySelectionView: View {
     @State private var searchText = ""
     @State private var isLoading = false // Loading state
     @State private var navigateToHome = false // Navigation state
+    @Environment(\.presentationMode) var presentationMode
     
     var filteredCities: [String] {
         if searchText.isEmpty {
@@ -73,7 +74,7 @@ struct CitySelectionView: View {
                         )
             if isLoading{
                 LoadingView()
-                    .transition(.move(edge: .trailing))
+                    .transition(.move(edge: .bottom))
             }
             
                     }
@@ -85,12 +86,10 @@ struct CitySelectionView: View {
         withAnimation(.easeInOut) {
             isLoading = true
         }
-       
-        
-           // Simulate loading delay before navigating to the home screen
+
            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                isLoading = false
-               navigateToHome = true // Trigger navigation to HomeView
+               presentationMode.wrappedValue.dismiss()
            }
        }
 }

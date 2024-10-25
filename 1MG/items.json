@@ -12,7 +12,7 @@
         {
             "id": "2",
             "itemName": "Vicks",
-            "itemImages": ["viks1", "viks2", "viks3"],
+            "itemImages": ["viks1", "viks1", "viks1"],
             "itemPrice": "122.70",
             "deleveryDate": "Delivery by 11pm today",
             "itemType": "Healthcare",
@@ -21,7 +21,7 @@
         {
             "id": "3",
             "itemName": "MamaEarth",
-            "itemImages": ["mama"],
+            "itemImages": ["mama", "mama", "mama"],
             "itemPrice": "250.30",
             "deleveryDate": "Delivery by 11pm today",
             "itemType": "Facecare",
@@ -30,7 +30,7 @@
         {
             "id": "4",
             "itemName": "Move",
-            "itemImages": ["move1"],
+            "itemImages": ["move1", "move1", "move1"],
             "itemPrice": "180.30",
             "deleveryDate": "Delivery by 11pm today",
             "itemType": "Wellness",
@@ -39,7 +39,7 @@
         {
             "id": "5",
             "itemName": "Pain Reliever",
-            "itemImages": ["pill"],
+            "itemImages": ["pill", "pill", "pill"],
             "itemPrice": "150.30",
             "deleveryDate": "Delivery by 11pm today",
             "itemType": "Medicine",
@@ -48,7 +48,7 @@
         {
             "id": "6",
             "itemName": "Sunscreen",
-            "itemImages": ["sunscreen"],
+            "itemImages": ["sunscreen", "sunscreen", "sunscreen"],
             "itemPrice": "260.30",
             "deleveryDate": "Delivery by 11pm today",
             "itemType": "Facecare",
@@ -57,7 +57,7 @@
         {
             "id": "7",
             "itemName": "Pain Away Cream",
-            "itemImages": ["move1"],
+            "itemImages": ["move1", "move1", "move1"],
             "itemPrice": "200.00",
             "deleveryDate": "Delivery by 11pm today",
             "itemType": "Wellness",
@@ -66,7 +66,7 @@
         {
             "id": "8",
             "itemName": "Moisturizing Sunscreen",
-            "itemImages": ["sunscreen"],
+            "itemImages": ["sunscreen", "sunscreen", "sunscreen"],
             "itemPrice": "300.00",
             "deleveryDate": "Delivery by 11pm today",
             "itemType": "Facecare",
@@ -75,7 +75,7 @@
         {
             "id": "9",
             "itemName": "Joint Relief Gel",
-            "itemImages": ["move1"],
+            "itemImages": ["move1", "move1", "move1"],
             "itemPrice": "220.50",
             "deleveryDate": "Delivery by 11pm today",
             "itemType": "Wellness",
@@ -84,7 +84,7 @@
         {
             "id": "10",
             "itemName": "Calamine Lotion",
-            "itemImages": ["viks1"],
+            "itemImages": ["viks1", "viks1", "viks1"],
             "itemPrice": "120.00",
             "deleveryDate": "Delivery by 11pm today",
             "itemType": "Healthcare",
@@ -93,7 +93,7 @@
         {
             "id": "11",
             "itemName": "Vitamin C Serum",
-            "itemImages": ["mama"],
+            "itemImages": ["mama", "mama", "mama"],
             "itemPrice": "299.99",
             "deleveryDate": "Delivery by 11pm today",
             "itemType": "Facecare",
@@ -102,7 +102,7 @@
         {
             "id": "12",
             "itemName": "Multivitamin Tablets",
-            "itemImages": ["pill"],
+            "itemImages": ["pill", "pill", "pill"],
             "itemPrice": "180.00",
             "deleveryDate": "Delivery by 11pm today",
             "itemType": "Wellness",
@@ -111,16 +111,16 @@
         {
             "id": "13",
             "itemName": "Moisturizing Cream",
-            "itemImages": ["sunscreen"],
+            "itemImages": ["sunscreen", "sunscreen", "sunscreen"],
             "itemPrice": "250.00",
             "deleveryDate": "Delivery by 11pm today",
             "itemType": "Facecare",
-            "itemInformation": "Product Information:\nMoisturizing Cream is formulated to hydrate and nourish the skin, providing long-lasting moisture. Ideal for dry or sensitive skin, this cream helps to restore the skin's natural barrier and prevent moisture loss. Use daily for a smoother, more supple complexion. Apply it generously to the face and neck after cleansing and toning, especially in dry weather."
+            "itemInformation": "Product Information:\nMoisturizing Cream is a rich, hydrating formula designed to nourish and rejuvenate the skin. Ideal for daily use, it helps to restore moisture balance, leaving the skin soft and smooth. Suitable for all skin types, this cream absorbs quickly without feeling greasy. For best results, apply it after cleansing and before makeup to maintain hydration throughout the day."
         },
         {
             "id": "14",
-            "itemName": "Ginger Tea Bags",
-            "itemImages": ["move1"],
+            "itemName": "Ginger Tea",
+            "itemImages": ["move1", "move1", "move1"],
             "itemPrice": "150.00",
             "deleveryDate": "Delivery by 11pm today",
             "itemType": "Wellness",
@@ -129,7 +129,7 @@
         {
             "id": "15",
             "itemName": "Hydrating Face Mist",
-            "itemImages": ["mama"],
+            "itemImages": ["mama", "mama", "mama"],
             "itemPrice": "190.00",
             "deleveryDate": "Delivery by 11pm today",
             "itemType": "Facecare",
@@ -138,7 +138,7 @@
         {
             "id": "16",
             "itemName": "Electrolyte Drink Mix",
-            "itemImages": ["viks1"],
+            "itemImages": ["viks1", "viks1", "viks1"],
             "itemPrice": "130.00",
             "deleveryDate": "Delivery by 11pm today",
             "itemType": "Wellness",
@@ -147,7 +147,7 @@
         {
             "id": "17",
             "itemName": "Omega-3 Fish Oil",
-            "itemImages": ["pill"],
+            "itemImages": ["pill", "pill", "pill"],
             "itemPrice": "240.00",
             "deleveryDate": "Delivery by 11pm today",
             "itemType": "Wellness",
@@ -156,7 +156,7 @@
         {
             "id": "18",
             "itemName": "Cough Syrup",
-            "itemImages": ["viks1"],
+            "itemImages": ["viks1", "viks1", "viks1"],
             "itemPrice": "175.00",
             "deleveryDate": "Delivery by 11pm today",
             "itemType": "Medicine",
@@ -165,7 +165,7 @@
         {
             "id": "19",
             "itemName": "Aloe Vera Gel",
-            "itemImages": ["sunscreen"],
+            "itemImages": ["sunscreen", "sunscreen", "sunscreen"],
             "itemPrice": "160.00",
             "deleveryDate": "Delivery by 11pm today",
             "itemType": "Facecare",
@@ -174,11 +174,83 @@
         {
             "id": "20",
             "itemName": "Tea Tree Oil",
-            "itemImages": ["mama"],
+            "itemImages": ["mama", "mama", "mama"],
             "itemPrice": "210.00",
             "deleveryDate": "Delivery by 11pm today",
             "itemType": "Facecare",
             "itemInformation": "Product Information:\nTea Tree Oil is a natural antiseptic known for its antibacterial and anti-inflammatory properties. It's commonly used in skincare for treating acne and blemishes. This oil can be applied directly to affected areas or diluted with a carrier oil for broader use. Always perform a patch test before full application to ensure no allergic reactions occur. Consult with a dermatologist for personalized advice."
+        },
+        {
+            "id": "21",
+            "itemName": "Scalpe+ Expert Anti Dandruff | Hair Care Shampoo",
+            "itemImages": ["ad1", "ad1", "ad1"],
+            "itemPrice": "1160.00",
+            "deleveryDate": "Delivery by 11pm today",
+            "itemType": "Hair Care",
+            "itemInformation": "Product Information:\nAloe Vera Gel is known for its soothing and moisturizing properties. It is commonly used to treat sunburns, skin irritation, and dry skin. The gel is lightweight and absorbs quickly, making it suitable for all skin types. Apply generously to the skin as needed for instant relief and hydration. Consider keeping it in the refrigerator for an extra cooling effect."
+        },
+        {
+            "id": "22",
+            "itemName": "Keraglo - AD Anti-Dandruff | Hair Care Shampoo Ipca Laboratories Ltd",
+            "itemImages": ["ad4", "a4", "ad4"],
+            "itemPrice": "1160.00",
+            "deleveryDate": "Delivery by 11pm today",
+            "itemType": "Hair Care",
+            "itemInformation": "Product Information:\nAloe Vera Gel is known for its soothing and moisturizing properties. It is commonly used to treat sunburns, skin irritation, and dry skin. The gel is lightweight and absorbs quickly, making it suitable for all skin types. Apply generously to the skin as needed for instant relief and hydration. Consider keeping it in the refrigerator for an extra cooling effect."
+        },
+        {
+            "id": "23",
+            "itemName": "Sebamed Baby Shampoo pH 5.5| Ideal for Newborn's delicate scalp❘ No Tears |",
+            "itemImages": ["ad3", "ad3", "ad3"],
+            "itemPrice": "360.00",
+            "deleveryDate": "Delivery by 11pm today",
+            "itemType": "Hair Care",
+            "itemInformation": "Product Information:\nAloe Vera Gel is known for its soothing and moisturizing properties. It is commonly used to treat sunburns, skin irritation, and dry skin. The gel is lightweight and absorbs quickly, making it suitable for all skin types. Apply generously to the skin as needed for instant relief and hydration. Consider keeping it in the refrigerator for an extra cooling effect."
+        },
+        {
+            "id": "24",
+            "itemName": "ANTI-HAIR FALL Shampoo Podes 5X Hair Pal Bare Anatomy Anti-Hairfall Shampoo | For Hair Care",
+            "itemImages": ["ad2", "ad2", "ad2"],
+            "itemPrice": "1560.00",
+            "deleveryDate": "Delivery by 11pm today",
+            "itemType": "Hair Care",
+            "itemInformation": "Product Information:\nAloe Vera Gel is known for its soothing and moisturizing properties. It is commonly used to treat sunburns, skin irritation, and dry skin. The gel is lightweight and absorbs quickly, making it suitable for all skin types. Apply generously to the skin as needed for instant relief and hydration. Consider keeping it in the refrigerator for an extra cooling effect."
+        },
+        {
+            "id": "25",
+            "itemName": "Vasu Aromatics Essential Oil Eucalyptus",
+            "itemImages": ["bd1", "bd1", "bd1"],
+            "itemPrice": "1160.00",
+            "deleveryDate": "Delivery by 11pm today",
+            "itemType": "Hair Care",
+            "itemInformation": "Product Information:\nAloe Vera Gel is known for its soothing and moisturizing properties. It is commonly used to treat sunburns, skin irritation, and dry skin. The gel is lightweight and absorbs quickly, making it suitable for all skin types. Apply generously to the skin as needed for instant relief and hydration. Consider keeping it in the refrigerator for an extra cooling effect."
+        },
+        {
+            "id": "26",
+            "itemName": "Bliss of Earth Lavender Premium Essential Oil",
+            "itemImages": ["bd4", "b4", "bd4"],
+            "itemPrice": "1160.00",
+            "deleveryDate": "Delivery by 11pm today",
+            "itemType": "Hair Care",
+            "itemInformation": "Product Information:\nAloe Vera Gel is known for its soothing and moisturizing properties. It is commonly used to treat sunburns, skin irritation, and dry skin. The gel is lightweight and absorbs quickly, making it suitable for all skin types. Apply generously to the skin as needed for instant relief and hydration. Consider keeping it in the refrigerator for an extra cooling effect."
+        },
+        {
+            "id": "27",
+            "itemName": "Aravi Organic Eucalyptus Essential Oil For Hair Growth, & Skin Care |",
+            "itemImages": ["bd3", "bd3", "bd3"],
+            "itemPrice": "360.00",
+            "deleveryDate": "Delivery by 11pm today",
+            "itemType": "Hair Care",
+            "itemInformation": "Product Information:\nAloe Vera Gel is known for its soothing and moisturizing properties. It is commonly used to treat sunburns, skin irritation, and dry skin. The gel is lightweight and absorbs quickly, making it suitable for all skin types. Apply generously to the skin as needed for instant relief and hydration. Consider keeping it in the refrigerator for an extra cooling effect."
+        },
+        {
+            "id": "28",
+            "itemName": "Kazima Breathe Plus 100% Pure Essential Oil",
+            "itemImages": ["bd2", "bd2", "bd2"],
+            "itemPrice": "1560.00",
+            "deleveryDate": "Delivery by 11pm today",
+            "itemType": "Hair Care",
+            "itemInformation": "Product Information:\nAloe Vera Gel is known for its soothing and moisturizing properties. It is commonly used to treat sunburns, skin irritation, and dry skin. The gel is lightweight and absorbs quickly, making it suitable for all skin types. Apply generously to the skin as needed for instant relief and hydration. Consider keeping it in the refrigerator for an extra cooling effect."
         }
     ]
 }

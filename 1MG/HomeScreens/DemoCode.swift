@@ -237,3 +237,79 @@
 //    }
 //}
 //
+
+
+//
+//{
+//    "id": "21",
+//    "itemName": "Scalpe+ Expert Anti Dandruff | Hair Care Shampoo",
+//    "itemImages": ["ad1","ad1","ad1"],
+//    "itemPrice": "1160.00",
+//    "deleveryDate": "Delivery by 11pm today",
+//    "itemType": "Hair Care",
+//    "itemInformation": "Product Information:\nAloe Vera Gel is known for its soothing and moisturizing properties. It is commonly used to treat sunburns, skin irritation, and dry skin. The gel is lightweight and absorbs quickly, making it suitable for all skin types. Apply generously to the skin as needed for instant relief and hydration. Consider keeping it in the refrigerator for an extra cooling effect."
+//},
+//{
+//    "id": "22",
+//    "itemName": "Keraglo - AD Anti-Dandruff | Hair Care Shampoo Ipca Laboratories Ltd",
+//    "itemImages": ["ad4","a4","ad4"],
+//    "itemPrice": "1160.00",
+//    "deleveryDate": "Delivery by 11pm today",
+//    "itemType": "Hair Care",
+//    "itemInformation": "Product Information:\nAloe Vera Gel is known for its soothing and moisturizing properties. It is commonly used to treat sunburns, skin irritation, and dry skin. The gel is lightweight and absorbs quickly, making it suitable for all skin types. Apply generously to the skin as needed for instant relief and hydration. Consider keeping it in the refrigerator for an extra cooling effect."
+//},
+//{
+//    "id": "23",
+//    "itemName": "Sebamed Baby Shampoo pH 5.5| Ideal for Newborn's delicate scalp❘ No Tears |",
+//    "itemImages": ["ad3","ad3","ad3"],
+//    "itemPrice": "360.00",
+//    "deleveryDate": "Delivery by 11pm today",
+//    "itemType": "Hair Care",
+//    "itemInformation": "Product Information:\nAloe Vera Gel is known for its soothing and moisturizing properties. It is commonly used to treat sunburns, skin irritation, and dry skin. The gel is lightweight and absorbs quickly, making it suitable for all skin types. Apply generously to the skin as needed for instant relief and hydration. Consider keeping it in the refrigerator for an extra cooling effect."
+//},
+//{
+//    "id": "24",
+//    "itemName": "ANTI-HAIR FALL Shampoo Podes 5X Hair Pal Bare Anatomy Anti-Hairfall Shampoo | For Hair Care",
+//    "itemImages": ["ad2","ad2","ad2"],
+//    "itemPrice": "1560.00",
+//    "deleveryDate": "Delivery by 11pm today",
+//    "itemType": "Hair Care",
+//    "itemInformation": "Product Information:\nAloe Vera Gel is known for its soothing and moisturizing properties. It is commonly used to treat sunburns, skin irritation, and dry skin. The gel is lightweight and absorbs quickly, making it suitable for all skin types. Apply generously to the skin as needed for instant relief and hydration. Consider keeping it in the refrigerator for an extra cooling effect."
+//},
+//{
+//    "id": "25",
+//    "itemName": "Vasu Aromatics Essential Oil Eucalyptus",
+//    "itemImages": ["bd1","bd1","bd1"],
+//    "itemPrice": "1160.00",
+//    "deleveryDate": "Delivery by 11pm today",
+//    "itemType": "Hair Care",
+//    "itemInformation": "Product Information:\nAloe Vera Gel is known for its soothing and moisturizing properties. It is commonly used to treat sunburns, skin irritation, and dry skin. The gel is lightweight and absorbs quickly, making it suitable for all skin types. Apply generously to the skin as needed for instant relief and hydration. Consider keeping it in the refrigerator for an extra cooling effect."
+//},
+//{
+//    "id": "26",
+//    "itemName": "Bliss of Earth Lavender Premium Essential Oil",
+//    "itemImages": ["bd4","b4","bd4"],
+//    "itemPrice": "1160.00",
+//    "deleveryDate": "Delivery by 11pm today",
+//    "itemType": "Hair Care",
+//    "itemInformation": "Product Information:\nAloe Vera Gel is known for its soothing and moisturizing properties. It is commonly used to treat sunburns, skin irritation, and dry skin. The gel is lightweight and absorbs quickly, making it suitable for all skin types. Apply generously to the skin as needed for instant relief and hydration. Consider keeping it in the refrigerator for an extra cooling effect."
+//},
+//{
+//    "id": "27",
+//    "itemName": "Aravi Organic Eucalyptus Essential Oil For Hair Growth, & Skin Care |",
+//    "itemImages": ["bd3","bd3","bd3"],
+//    "itemPrice": "360.00",
+//    "deleveryDate": "Delivery by 11pm today",
+//    "itemType": "Hair Care",
+//    "itemInformation": "Product Information:\nAloe Vera Gel is known for its soothing and moisturizing properties. It is commonly used to treat sunburns, skin irritation, and dry skin. The gel is lightweight and absorbs quickly, making it suitable for all skin types. Apply generously to the skin as needed for instant relief and hydration. Consider keeping it in the refrigerator for an extra cooling effect."
+//},
+//{
+//    "id": "28",
+//    "itemName": "Kazima Breathe Plus 100% Pure Essential Oil
+//",
+//    "itemImages": ["bd2","bd2","bd2"],
+//    "itemPrice": "1560.00",
+//    "deleveryDate": "Delivery by 11pm today",
+//    "itemType": "Hair Care",
+//    "itemInformation": "Product Information:\nAloe Vera Gel is known for its soothing and moisturizing properties. It is commonly used to treat sunburns, skin irritation, and dry skin. The gel is lightweight and absorbs quickly, making it suitable for all skin types. Apply generously to the skin as needed for instant relief and hydration. Consider keeping it in the refrigerator for an extra cooling effect."
+//}
