@@ -32,7 +32,7 @@ struct ProfileView: View {
                     
                     VStack(alignment: .leading, spacing: 0) {
                         
-                        Text("hi \(userViewModel.logginUser.username)")
+                        Text("hi \(userViewModel.loggedInUser.username )")
                             .font(.title)
                             .fontWeight(.bold)
                         
@@ -42,7 +42,11 @@ struct ProfileView: View {
                         
                         
                             RoundeButton(title: "Log Out") {
-                                userViewModel.isLoggedIn = false
+                                mainViewModel.seletectedTab = 0
+                                withAnimation(.easeIn(duration: 2)) {
+                                    userViewModel.isLoggedIn = false
+                                }
+                               
                             }
                             .frame(width: 370, height: 50)
                             .padding(.vertical,15)

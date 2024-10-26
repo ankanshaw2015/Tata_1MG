@@ -33,6 +33,7 @@ struct DetailItemView: View {
                                 ForEach(itemData.itemImages,id:\.self) { image in
                                     Image(image)
                                         .resizable()
+                                    
                                         .frame(width: 350,height: 200)
                                         .cornerRadius(15)
                                         .padding(5)
@@ -49,17 +50,16 @@ struct DetailItemView: View {
                                 .foregroundColor(.black)
                                 .font(.title2)
                                 .bold()
-                                .frame(width: 390, height: 60,alignment: .leading)
+                                .frame(width: 390, height: 60,alignment: .topLeading)
                                 .padding(8)
-                            
-                            Spacer()
+
                             Text("CompanyInfo")
                                 .foregroundColor(.gray)
                                 .padding(5)
                                 
                             
                         }
-                        .frame(width: 380, height: 100,alignment: .topLeading)
+                        .frame(width: 380, height: 110,alignment: .topLeading)
                         .background(.orange.opacity(0.1))
                         .padding(.horizontal,10)
                         
@@ -100,7 +100,8 @@ struct DetailItemView: View {
                         .padding(10)
                         
                         VStack(alignment:.leading){
-                            Text("MRP \u{20B9}699")
+                            let mrp = (Double(itemData.itemPrice) ?? 10) * 1.8
+                            Text("MRP \u{20B9} \(String(format:"%.1f",mrp))")
                                 .font(.title)
                                 .foregroundColor(.gray)
                                 .strikethrough()
@@ -112,7 +113,7 @@ struct DetailItemView: View {
                                         .bold()
                                         .padding(10)
                                     
-                                    Text("\(  String(format:"%.1f",((699 - (Double(itemData.itemPrice) ?? 10))/699 * 100 )) ) % off with coupons")
+                                    Text("\(  String(format:"%.1f",((mrp - (Double(itemData.itemPrice) ?? 10))/mrp * 100 )) ) % off with coupons")
                                         .font(.title3)
                                         .foregroundColor(.green)
                                         .bold()

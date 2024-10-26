@@ -313,3 +313,4 @@
 //    "itemType": "Hair Care",
 //    "itemInformation": "Product Information:\nAloe Vera Gel is known for its soothing and moisturizing properties. It is commonly used to treat sunburns, skin irritation, and dry skin. The gel is lightweight and absorbs quickly, making it suitable for all skin types. Apply generously to the skin as needed for instant relief and hydration. Consider keeping it in the refrigerator for an extra cooling effect."
 //}
+

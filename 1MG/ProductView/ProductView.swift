@@ -12,36 +12,43 @@ struct ProductView: View {
     @State var index = 0
     @State var data:ItemCellData = ItemsFile().itemCellData[0]
     @State var dataArray:[ItemCellData] = ItemsFile().itemCellData1
-    //var itemType:String
+    @State private var activeButtonIndex: Int? = nil
+    let images = ["p11","p21","p31","p41","p51","p61"]
    @State var count :Int = 5
-//    init(type:String = "normal"){
-//        count = 1
-//        
-//        if type == "normal"{
-//            dataArray = ItemsFile().itemCellData1
-//        }
-//        else{
-//            dataArray = viewModel.loadItems(ofType: type)
-//        }
-//    }
+
 
     var body: some View {
         NavigationView{
             VStack(alignment:.leading){
                 HStack{
                     VStack{
-                        ScrollView{
-                            ForEach(0..<count){i in
-                                ProductParts()
-                                    .padding(5)
-                                    .onTapGesture {
-//                                        dataArray = ItemsFile().itemCellData1
-                                        withAnimation() {
-                                            index = i
-                                                
-                                        }
+                        ScrollView(showsIndicators:false){
+                            ForEach(0..<images.count, id: \.self){index in
+                                
+                                Button(action: {
+                                    
+                                    if activeButtonIndex == index {
+                                      
+                                        activeButtonIndex = nil
+                                    } else {
                                        
+                                        activeButtonIndex = index
                                     }
+                                    withAnimation() {
+                                        self.index = index
+                                            
+                                    }
+                                }) {
+                                    Image(images[index])
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 99, height: 130,alignment: .topLeading)
+                                      
+                                        .frame(width: 100, height: 120)
+                                        .background(activeButtonIndex == index ? Color.blue : Color.white)
+                                        .cornerRadius(15)
+                                }
+
                             }
                         }
                     }

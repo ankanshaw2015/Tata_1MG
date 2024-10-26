@@ -28,8 +28,8 @@ struct ProductItems: View {
                     Image(item.itemImages[0])
                         .resizable()
                         .scaledToFill()
-                        .clipped()
                         .frame(width: 40, height: 100)
+                        .clipped()
                         .padding()
                     
                     VStack(alignment:.leading){

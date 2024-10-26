@@ -62,7 +62,7 @@ struct MyCartView: View {
                                         .frame(width:160,alignment: .leading)
                                         Spacer()
                                         // Text("x")
-                                        Stepper("X \(quantity)") {
+                                        Stepper("qty: \(quantity)") {
                                             if quantity <= 10{
                                                 mainViewModel.addQuantity(for: item)
                                             }

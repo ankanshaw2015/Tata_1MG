@@ -9,6 +9,8 @@ import SwiftUI
 
 struct PaymentPopUp: View {
     
+    //@EnvironmentObject var mainViewModel:MainViewModel
+    @EnvironmentObject var userViewModel:UserViewModel
     @EnvironmentObject var viewModel : MainViewModel
     var body: some View {
         
@@ -65,6 +67,7 @@ struct PaymentPopUp: View {
                      .background(.orange)
                      .cornerRadius(10)
                 }
+                
                
             }
             .padding()

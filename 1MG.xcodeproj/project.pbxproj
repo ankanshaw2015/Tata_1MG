@@ -43,9 +43,9 @@
 		048438E82CBCF24700855020 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048438E72CBCF24700855020 /* ProfileView.swift */; };
 		048438EA2CBCF96B00855020 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048438E92CBCF96B00855020 /* ProfileModel.swift */; };
 		048438EF2CBD283300855020 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048438EE2CBD283300855020 /* UserModel.swift */; };
-		048438F12CBD289B00855020 /* SignInUPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048438F02CBD289B00855020 /* SignInUPViewModel.swift */; };
+		048438F12CBD289B00855020 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048438F02CBD289B00855020 /* UserViewModel.swift */; };
 		048438F32CBD2A0C00855020 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048438F22CBD2A0C00855020 /* SignUpView.swift */; };
-		048438F52CBD2B8400855020 /* Start.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048438F42CBD2B8400855020 /* Start.swift */; };
+		048438F52CBD2B8400855020 /* LetsStart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048438F42CBD2B8400855020 /* LetsStart.swift */; };
 		048438F72CBD2DAC00855020 /* MyHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048438F62CBD2DAC00855020 /* MyHome.swift */; };
 		049A6DDB2CCA1004006D787D /* PasswordFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049A6DDA2CCA1004006D787D /* PasswordFieldView.swift */; };
 		049A6DDD2CCA32C8006D787D /* DemoCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049A6DDC2CCA32C8006D787D /* DemoCode.swift */; };
@@ -110,9 +110,9 @@
 		048438E72CBCF24700855020 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		048438E92CBCF96B00855020 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		048438EE2CBD283300855020 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
-		048438F02CBD289B00855020 /* SignInUPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInUPViewModel.swift; sourceTree = "<group>"; };
+		048438F02CBD289B00855020 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		048438F22CBD2A0C00855020 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
-		048438F42CBD2B8400855020 /* Start.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Start.swift; sourceTree = "<group>"; };
+		048438F42CBD2B8400855020 /* LetsStart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetsStart.swift; sourceTree = "<group>"; };
 		048438F62CBD2DAC00855020 /* MyHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHome.swift; sourceTree = "<group>"; };
 		049A6DDA2CCA1004006D787D /* PasswordFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordFieldView.swift; sourceTree = "<group>"; };
 		049A6DDC2CCA32C8006D787D /* DemoCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoCode.swift; sourceTree = "<group>"; };
@@ -288,7 +288,7 @@
 				04D5B07E2CB3E44F00AFDEE8 /* Model */,
 				04D5B0702CB3E3EC00AFDEE8 /* _MGApp.swift */,
 				04E191352CCB7D3D00FACA24 /* LaunchScreen.storyboard */,
-				048438F42CBD2B8400855020 /* Start.swift */,
+				048438F42CBD2B8400855020 /* LetsStart.swift */,
 				048438F62CBD2DAC00855020 /* MyHome.swift */,
 				04D5B0722CB3E3EC00AFDEE8 /* ContentView.swift */,
 				04D5B0742CB3E3F000AFDEE8 /* Assets.xcassets */,
@@ -337,7 +337,7 @@
 			isa = PBXGroup;
 			children = (
 				047981DB2CB652EA00B935C0 /* HomeViewModel.swift */,
-				048438F02CBD289B00855020 /* SignInUPViewModel.swift */,
+				048438F02CBD289B00855020 /* UserViewModel.swift */,
 				04499FC92CBF8869000F099B /* MainHomeViewModel.swift */,
 			);
 			path = "View Model";
@@ -433,7 +433,7 @@
 				047981E22CB6568400B935C0 /* ExploreView.swift in Sources */,
 				04D5B0732CB3E3EC00AFDEE8 /* ContentView.swift in Sources */,
 				047AB3822CBFD2BD00F0A8D0 /* SpecificItem.swift in Sources */,
-				048438F52CBD2B8400855020 /* Start.swift in Sources */,
+				048438F52CBD2B8400855020 /* LetsStart.swift in Sources */,
 				047AB3802CBFCE6E00F0A8D0 /* ImageScrolls.swift in Sources */,
 				047981DC2CB652EB00B935C0 /* HomeViewModel.swift in Sources */,
 				040A720D2CCA086B00348294 /* LabTestsView.swift in Sources */,
@@ -461,7 +461,7 @@
 				0430E2592CC8B9DD000ECD0F /* EmptyCartView.swift in Sources */,
 				04AB37AA2CB54AE2008E44DC /* HomeView.swift in Sources */,
 				048438E52CBCE34A00855020 /* ItemCell.swift in Sources */,
-				048438F12CBD289B00855020 /* SignInUPViewModel.swift in Sources */,
+				048438F12CBD289B00855020 /* UserViewModel.swift in Sources */,
 				04D861492CC6CE39005D0A86 /* AnimatedStacks.swift in Sources */,
 				041B17792CC81E1E00BC1E34 /* AddvertiseView.swift in Sources */,
 				04615F122CC12E920005343F /* ExtraDetails.swift in Sources */,
@@ -610,6 +610,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -638,6 +639,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

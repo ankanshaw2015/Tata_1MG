@@ -33,7 +33,7 @@ struct Checking: View {
             TabView(selection:$selected){
                 ForEach(0..<6){index in
                     NavigationLink(destination: {
-                        
+                        AddvertiseView()
                     }) {
                         Image(images[index])
                             .resizable()

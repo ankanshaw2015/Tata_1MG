@@ -2,7 +2,7 @@ import SwiftUI
 
 struct OrderedListView: View {
     @EnvironmentObject var viewModel: MainViewModel
-
+    @EnvironmentObject var userViewModel:UserViewModel
     var body: some View {
         NavigationView {
             VStack {
@@ -18,7 +18,8 @@ struct OrderedListView: View {
                     .padding(.bottom)
 
                 // Check if the cart is empty
-                if viewModel.orderList.isEmpty {
+                let orderList = userViewModel.fetchCartItems()
+                if  orderList.isEmpty {
                     VStack {
                         Image(systemName: "cart.fill")
                             .resizable()
@@ -37,7 +38,7 @@ struct OrderedListView: View {
                     .padding()
                 } else {
                     List {
-                        ForEach(viewModel.orderList, id: \.item.id) { cartItem in
+                        ForEach( orderList, id: \.item.id) { cartItem in
                             HStack {
                                 // Product Image
                                 Image(cartItem.item.itemImages[0]) // Assuming itemImages is an array
@@ -86,5 +87,6 @@ struct OrderedListView_Previews: PreviewProvider {
     static var previews: some View {
         OrderedListView()
             .environmentObject(MainViewModel())
+            .environmentObject(UserViewModel())
     }
 }

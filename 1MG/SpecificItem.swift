@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SpecificItem: View {
-    var data = " wellness"
+//    var data = " wellness"
     var image = "pill"
     
     var body: some View {
@@ -18,20 +18,10 @@ struct SpecificItem: View {
                     .resizable()
                     .padding(3)
             }
-            
-            .frame(width: 80,height: 100)
-            .padding(5)
-            .background(.orange.opacity(0.3))
-            Spacer()
-            Text(data)
-                .foregroundColor(.black)
-                //.bold()
-                .font(.caption)
-              
         }
         .frame(width: 95, height: 140)
        // .background(.blue)
-        .cornerRadius(15)
+        .cornerRadius(25)
     }
 }
 

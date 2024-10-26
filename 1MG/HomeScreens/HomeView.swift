@@ -1,11 +1,5 @@
-//
-//  DemoCode.swift
-//  1MG
-//
-//  Created by Yashom on 24/10/24.
-//
 
-//
+
 //  HomeView.swift
 //  1MG
 //
@@ -156,7 +150,7 @@ struct HomeView: View {
                     Color.black.opacity(0.4) // Background overlay
                         .edgesIgnoringSafeArea(.all)
                     PrescriptionView()
-                        .padding(.top,570)
+                        .padding(.top,610)
                         .transition(.move(edge: .bottom))
                         .animation(.easeInOut)
                 }

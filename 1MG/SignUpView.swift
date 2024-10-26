@@ -38,6 +38,7 @@ struct SignUpView: View {
                 VStack(spacing: 15) {
  
                     TextField("Enter email", text: $email)
+                        .textInputAutocapitalization(.never)
                         .padding(5)
                         .frame(height: 40)
                         .background(RoundedRectangle(cornerRadius: 20).stroke())
@@ -45,11 +46,13 @@ struct SignUpView: View {
                     HStack{
                         if showPass {
                             TextField("Enter password", text: $password)
+                                .textInputAutocapitalization(.never)
                                 .padding(5)
                                 .frame(height: 40)
                         }
                         else{
                             SecureField("Enter password", text: $password)
+                                .textInputAutocapitalization(.never)
                                 .padding(5)
                                 .frame(height: 40)
                         }
@@ -77,6 +80,9 @@ struct SignUpView: View {
                     }
                     else if !email.contains("@gmail.com"){
                         alert = "Not a valid mail"
+                    }
+                    else if password.count < 8{
+                        alert = "password should have atleast 8 letter"
                     }
                         else{
                             userViewModel.signUp(username: email, password: password)

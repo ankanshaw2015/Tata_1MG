@@ -40,6 +40,7 @@ struct EmailSignUpView: View {
                 VStack(spacing: 15) {
  
                     TextField("Enter email", text: $email)
+                        .textInputAutocapitalization(.never)
                         .padding(5)
                         .frame(height: 40)
                         .background(RoundedRectangle(cornerRadius: 20).stroke())
@@ -47,11 +48,13 @@ struct EmailSignUpView: View {
                     HStack{
                         if showPass {
                             TextField("Enter password", text: $password)
+                                .textInputAutocapitalization(.never)
                                 .padding(5)
                                 .frame(height: 40)
                         }
                         else{
                             SecureField("Enter password", text: $password)
+                                .textInputAutocapitalization(.never)
                                 .padding(5)
                                 .frame(height: 40)
                         }
