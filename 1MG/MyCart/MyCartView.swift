@@ -16,9 +16,7 @@ struct MyCartView: View {
     @State var sum  = 0
     
     var body: some View {
-        NavigationView{
-            
-            
+
             ZStack{
                 
                 VStack{
@@ -64,7 +62,7 @@ struct MyCartView: View {
                                         .frame(width:160,alignment: .leading)
                                         Spacer()
                                         // Text("x")
-                                        Stepper("X \(quantity)") {
+                                        Stepper("qty: \(quantity)") {
                                             if quantity <= 10{
                                                 mainViewModel.addQuantity(for: item)
                                             }
@@ -188,22 +186,8 @@ struct MyCartView: View {
                    
                 
             }//zstack
-            
-            .navigationTitle("My Cart")
-        }
-        //.navigationBarHidden(true)
-        //navigationview
     }
-    
-    
-//    func totalBill() -> Double{
-//
-//        let sum = (0..<counts.count).reduce(0) { (result, index) in
-//            result + (Double(cartData[index].itemPrice)! * Double(counts[index]))
-//                   }
-//
-//        return sum
-//    }
+
 }
 
 struct MyCartView_Previews: PreviewProvider {

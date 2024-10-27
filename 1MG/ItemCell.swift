@@ -122,11 +122,13 @@ struct ItemCell: View {
                     
                 }
                 // .frame(width: .infinity,alignment: .leading)
-                .shadow(radius: 2)
+                //.shadow(radius: 2)
                 //.padding(5)
+                
             }
             //VStack
             .frame(width: 180, height: 290)
+          
             
             .overlay(
                 RoundedRectangle(cornerRadius: 15 )

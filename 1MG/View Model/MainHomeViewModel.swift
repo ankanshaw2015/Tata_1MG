@@ -19,15 +19,25 @@ class MainViewModel:ObservableObject{
     @Published var goToAdd = false
     
     @Published var serchText:String = ""
-    @Published var cartData: [(item: ItemCellData, quantity: Int)] = [(item:ItemsFile().itemCellData[0] , quantity:1),
-                                                                      (item:ItemsFile().itemCellData[1] , quantity: 1)]
+    @Published var cartData: [(item: ItemCellData, quantity: Int)] = []
+    
+   // [(item:ItemsFile().itemCellData[0] , quantity:1),(item:ItemsFile().itemCellData[1] , quantity: 1)]
+    @Published var orderList:[(item: ItemCellData, quantity: Int)] = []
    // @Published var totalBill
     var cartview = MyCartView()
+    var homeView = HomeView()
     
    // @Published var productIndex = 0
     var itemFile = ItemsFile()
     
     @Published var dataArray:[ItemCellData] = ItemsFile().itemCellData
+    
+    @Published var items: [ItemCellData] = []
+       
+       init() {
+           loadItems() // Load all items initially, or you can pass a type to load specific ones
+       }
+
     
     
     func fetchCartItems() -> [(item: ItemCellData, quantity: Int)]{
@@ -110,18 +120,32 @@ class MainViewModel:ObservableObject{
         }
     }
     
-//    func getListOfItem(index : Int){
-//        switch index {
-//        case 0 : return itemFile.itemCellData
-//        case 1 : return itemFile.itemCellData1
-//        case 2 : return itemFile.itemCellData2
-//        case 3 : return itemFile.itemCellData
-//        case 4 : return itemFile.itemCellData1
-//        case 5 : return itemFile.itemCellData2
-//
-//        default:
-//            return itemFile.itemCellData2
-//        }
-//    }
+ 
+       func loadItems(ofType type: String? = nil) -> [ItemCellData]{
+           guard let url = Bundle.main.url(forResource: "items", withExtension: "json") else {
+               print("JSON file not found")
+               return items
+           }
+
+           do {
+               let data = try Data(contentsOf: url)
+               let decodedData = try JSONDecoder().decode(ItemList.self, from: data)
+
+               if let type = type {
+                   // Filter items by type if a type is specified
+                   self.items = decodedData.itemCellData.filter { $0.itemType == type }
+               } else {
+                   // Load all items if no type is specified
+                   self.items = decodedData.itemCellData
+               }
+           } catch {
+               print("Error decoding JSON: \(error)")
+           }
+           
+           return items
+       }
+   }
+
+  
     
-}
+

@@ -14,7 +14,7 @@ struct CartButton: View {
    // @State var items = 1
 
     var body: some View {
-        NavigationLink(destination: MyCartView()) {
+        NavigationLink(destination: viewModel.cartview) {
             ZStack(alignment: .topTrailing) {
                 Image(systemName: "cart.fill")
                     //.resizable()
@@ -23,7 +23,7 @@ struct CartButton: View {
                     .background(Color.gray.opacity(0.2))
                     .cornerRadius(25)
                 
-                // Overlay text positioned at the top right
+                
                 if viewModel.cartData.count > 0 {
                     Text("\(viewModel.cartData.count)")
                         .foregroundColor(.white)
@@ -31,7 +31,7 @@ struct CartButton: View {
                         .frame(width: 25, height: 25)
                         .background(Color.orange)
                         .clipShape(Circle())
-                    //  .padding(8) // Adjust the padding as needed
+                   
                 }
             }
         }

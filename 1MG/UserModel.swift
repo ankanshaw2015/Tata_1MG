@@ -7,8 +7,19 @@
 
 import Foundation
 
-struct User: Identifiable {
-    let id = UUID()
+class User: Codable {
     var username: String
     var password: String
+    var cart: [CartItem]
+    init(username: String, password: String) {
+        self.username = username
+        self.password = password
+        self.cart = []
+    }
+}
+
+
+struct CartItem: Codable {
+    var item: ItemCellData
+    var quantity: Int
 }

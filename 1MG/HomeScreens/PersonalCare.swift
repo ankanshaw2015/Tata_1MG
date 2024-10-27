@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct PersonalCare: View {
-    let images = ["pill","azit1","move1","viks1","azit2","lab2","mama","sunscreen"]
-    let data = ["Hair Care","Oral Care","Sexual Wellness","Skin Care","Feminine Care","Baby Care","ElderLy Care", "Men Grooming"]
+    let images = ["p11","p21","p31","p41","p51","p61","p71","p81"]
+//    let data = ["Hair Care","Oral Care","Sexual Wellness","Skin Care","Feminine Care","Baby Care","ElderLy Care", "Men Grooming"]
     var body: some View {
         VStack{
             HStack(spacing: 0){
@@ -17,25 +17,26 @@ struct PersonalCare: View {
                     NavigationLink {
                         ProductView()
                     } label: {
-                        SpecificItem(data: data[index], image: images[index])
+                        SpecificItem( image: images[index])
                     }
-                    Spacer()
+                   
                 }
             }
-            .padding(5)
+           // .padding(5)
             
             HStack(spacing: 0){
                 ForEach(4..<8) { index in
                     NavigationLink {
-                        
+                        ProductView()
                     } label: {
-                        SpecificItem(data: data[index], image: images[index])
+                        SpecificItem( image: images[index])
                     }
-                    Spacer()
+                   
                 }
             }
-            .padding(5)
+           // .padding(.horizontal)
         }
+        
         
     }
 }

@@ -23,9 +23,7 @@ struct DetailItemView: View {
     }
     
     var body: some View {
-        
-        
-        NavigationView{
+   
             ZStack{
                 ScrollView{
                     VStack(alignment:.leading){
@@ -35,6 +33,7 @@ struct DetailItemView: View {
                                 ForEach(itemData.itemImages,id:\.self) { image in
                                     Image(image)
                                         .resizable()
+                                    
                                         .frame(width: 350,height: 200)
                                         .cornerRadius(15)
                                         .padding(5)
@@ -46,20 +45,21 @@ struct DetailItemView: View {
                         }//scroll view
                         .padding(10)
                         
-                        VStack(){
+                        VStack(alignment:.leading){
                             Text(itemData.itemName)
                                 .foregroundColor(.black)
                                 .font(.title2)
                                 .bold()
+                                .frame(width: 390, height: 60,alignment: .topLeading)
                                 .padding(8)
-                            
-                            Spacer()
+
                             Text("CompanyInfo")
                                 .foregroundColor(.gray)
                                 .padding(5)
+                                
                             
                         }
-                        .frame(width: 380, height: 100,alignment: .topLeading)
+                        .frame(width: 380, height: 110,alignment: .topLeading)
                         .background(.orange.opacity(0.1))
                         .padding(.horizontal,10)
                         
@@ -100,7 +100,8 @@ struct DetailItemView: View {
                         .padding(10)
                         
                         VStack(alignment:.leading){
-                            Text("MRP \u{20B9}699")
+                            let mrp = (Double(itemData.itemPrice) ?? 10) * 1.8
+                            Text("MRP \u{20B9} \(String(format:"%.1f",mrp))")
                                 .font(.title)
                                 .foregroundColor(.gray)
                                 .strikethrough()
@@ -112,7 +113,7 @@ struct DetailItemView: View {
                                         .bold()
                                         .padding(10)
                                     
-                                    Text("\(  String(format:"%.1f",((699 - (Double(itemData.itemPrice) ?? 10))/699 * 100 )) ) % off with coupons")
+                                    Text("\(  String(format:"%.1f",((mrp - (Double(itemData.itemPrice) ?? 10))/mrp * 100 )) ) % off with coupons")
                                         .font(.title3)
                                         .foregroundColor(.green)
                                         .bold()
@@ -132,27 +133,7 @@ struct DetailItemView: View {
                         
                         HStack{
                             Spacer()
-//                            if addedItems == 0{
-//
-//                                RoundeButton(title: "Add"){
-//                                    addedItems += 1
-//                                }
-//                                .frame(width: 190, height: 40)
-//                                .padding(10)
-//                                .padding(.horizontal)
-//                            }
-//                            else {
-//                                addedItemButton(title: "\(addedItems) added"){
-//                                    showPopup = true
-//                                }
-//                                .frame(width: 190, height: 40)
-//                                .padding(10)
-//                                .padding(.horizontal)
-//
-//
-//
-//                            }
-                            
+                      
                             Button(action: {
                               //  didAddCart?()
                                 print("button tapped")
@@ -229,13 +210,15 @@ struct DetailItemView: View {
                     
                     
                 }//scrollview
-               
-               
+                .navigationTitle("Details")
                 
-                .navigationBarItems(trailing: CartButton())
-                
+                .navigationBarItems(trailing: NavigationLink(destination: {
+                    viewModel.cartview
+                }, label: {
+                    CartButton()
+                }))
                
-                
+            
                 if showPopup {
                     Color.black.opacity(0.4) // Background overlay
                         .edgesIgnoringSafeArea(.all)
@@ -246,17 +229,11 @@ struct DetailItemView: View {
                         .cornerRadius(10)
                         .shadow(radius: 20)
                 }
-                    
-                
+
+               
+            
             }//Zstack
-            .navigationTitle("")
-            .navigationBarItems(trailing: Button(action: {
-                
-            }, label: {
-                Image(systemName: "arrowshape.turn.up.right.fill")
-            }))
-            .navigationBarHidden(false)
-        }//navigationView
+      
         .onAppear {
             addedItems = viewModel.checkData(for: itemData)
         }

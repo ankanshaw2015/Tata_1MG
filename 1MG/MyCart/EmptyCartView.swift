@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct EmptyCartView: View {
+    @Environment(\.presentationMode) var presentationMode
+
     var body: some View {
         ZStack{
             Color.white
@@ -32,6 +34,7 @@ struct EmptyCartView: View {
                     .bold()
                 
                 Button {
+                    presentationMode.wrappedValue.dismiss()
                     
                 } label: {
                     Text("Find Medicines")

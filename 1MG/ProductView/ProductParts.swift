@@ -8,24 +8,25 @@
 import SwiftUI
 
 struct ProductParts: View {
-    var image = "pill"
-    var text = "Sampoos & \n Conditioners"
-    let options = ["1", "2", "3"]
+    var image = "p11"
+   
+    @State var color = Color.white
     
     var body: some View {
          
             VStack{
                 Image(image)
                     .resizable()
-                    .frame(width: 100, height: 100)
+                    .scaledToFit()
+                    .frame(width: 99, height: 130,alignment: .topLeading)
+                  
+                    .frame(width: 100, height: 120)
+                    .background(color)
                     .cornerRadius(15)
-                Text(text)
-                    .foregroundColor(.black)
-                    .bold()
-                
             
         }
-        .frame(width: 110, height: 180)
+            
+     
 
     }
 }

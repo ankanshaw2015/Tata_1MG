@@ -10,6 +10,8 @@
 import SwiftUI
 
 struct HealthPlansView: View {
+    @EnvironmentObject var mainViewModel : MainViewModel
+    
     var body: some View {
         NavigationView {
             ScrollView {
@@ -206,6 +208,9 @@ struct HealthPlansView: View {
                     .padding(.horizontal)
                 }
                 .padding(.top)
+                .onDisappear{
+                    mainViewModel.seletectedTab = 0
+                }
             }
         }
     }

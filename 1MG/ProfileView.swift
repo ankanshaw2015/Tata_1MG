@@ -8,11 +8,15 @@
 import SwiftUI
 
 struct ProfileView: View {
+    
+    @EnvironmentObject var mainViewModel:MainViewModel
+    @EnvironmentObject var userViewModel:UserViewModel
     @State var name: String = "there!"
     @State var subName :String = "Sign in to start your healthcare journey"
     var icons = ProfileData().iconImage
     var mainList = ProfileData().profileList
     @State var about = ProfileData().section
+    
     
     var body: some View {
         
@@ -24,31 +28,66 @@ struct ProfileView: View {
            
             ScrollView{
                 
-                VStack(alignment: .leading, spacing: 0) {
+                if userViewModel.isLoggedIn {
                     
-                    Text("hi \(name)")
-                        .font(.title)
-                        .fontWeight(.bold)
-                    
-                    Text(subName)
-                        .font(.subheadline)
-                        .foregroundColor(.gray)
-                    
-                    NavigationLink(destination: {
-                        SignInView()
-                    }, label: {
-                        RoundeButton(title: "Sign in") {
-                            
+                    VStack(alignment: .leading, spacing: 0) {
+                        
+                        Text("hi \(userViewModel.loggedInUser.username )")
+                            .font(.title)
+                            .fontWeight(.bold)
+                        
+                        Text("Be well always")
+                            .font(.subheadline)
+                            .foregroundColor(.gray)
+                        
+                        
+                            RoundeButton(title: "Log Out") {
+                                mainViewModel.seletectedTab = 0
+                                withAnimation(.easeIn(duration: 2)) {
+                                    userViewModel.isLoggedIn = false
+                                }
+                               
+                            }
+                            .frame(width: 370, height: 50)
+                            .padding(.vertical,15)
                         }
-                    })
+                        
+                        
+                       
+                    }
                     
                     
-                    .padding(.vertical,10)
+                 else{
+                    VStack(alignment: .leading, spacing: 0) {
+                        
+                        Text("hi \(name)")
+                            .font(.title)
+                            .fontWeight(.bold)
+                        
+                        Text(subName)
+                            .font(.subheadline)
+                            .foregroundColor(.gray)
+                        
+                        NavigationLink(destination: {
+                            SignInView()
+                        }, label: {
+                            RoundeButton(title: "Sign in") {
+                                
+                            }
+                            .frame(width: 370, height: 50)
+                            .padding(.vertical,15)
+                        })
+                        
+                        
+                       
+                    }
                     
-                    //  VStack(alignment: .leading, spacing: 0){
+                }
+                //  VStack(alignment: .leading, spacing: 0){
                     List {
                         ForEach((0..<mainList.count),id: \.self) { data in
                             NavigationLink {
+                                OrderedListView()
                                 
                             } label: {
                                 HStack{
@@ -73,7 +112,7 @@ struct ProfileView: View {
                     List {
                         ForEach(about,id: \.self) { data in
                             NavigationLink {
-                                
+                                OrderedListView()
                             } label: {
                                 HStack{
                                     // Image(systemName: icons)
@@ -100,6 +139,10 @@ struct ProfileView: View {
                 .padding(15)
                 // .shadow(color: .gray.opacity(0.3), radius: 2,x: 0,y: 2)
                 
+//                .onDisappear{
+//                    mainViewModel.seletectedTab = 0
+//                }
+                
             }
                 
             }
@@ -109,10 +152,9 @@ struct ProfileView: View {
        
 }
 
-}
-
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
         ProfileView()
+            .environmentObject(UserViewModel())
     }
 }
