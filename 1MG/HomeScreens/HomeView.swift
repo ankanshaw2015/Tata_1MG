@@ -70,12 +70,15 @@ struct HomeView: View {
                                         .scaledToFit()
                                         .padding(.vertical)
 
-                                    Title(title: "Personal Care",titleAll: "see all")
+                                    Title(title: "Personal Care",titleAll: "")
                                         .padding(5)
                                         .padding(.horizontal,10)
                                     PersonalCare()
                                 }
-                                Text("Lab testes and packages")
+                               Title(title: "Lab Tests and packages",titleAll: "")
+                                   .padding(5)
+                                   .padding(.horizontal,10)
+                                   
                                     .padding(.horizontal,20)
 
                                 Checking()
@@ -168,6 +171,7 @@ struct HomeView_Previews: PreviewProvider {
         // NavigationView {
         HomeView()
             .environmentObject(MainViewModel())
+            .environmentObject(UserViewModel())
         //.navigationTitle("aaa")
         // }
 

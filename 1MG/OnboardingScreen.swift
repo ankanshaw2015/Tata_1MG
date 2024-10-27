@@ -88,9 +88,12 @@ struct OnboardingScreen: View {
                 }
                    
             label: {
-                RoundeButton(title: "Lets's Start"){
-                    
-                }
+                Text("Lets Start")
+                    .foregroundColor(.black)
+                    .frame(minWidth: 0,maxWidth: .infinity, minHeight: 20,maxHeight: 60)
+                    .background(Color.orange)
+                    .cornerRadius(10)
+                    .shadow(radius: 10)
                 .padding(.horizontal)
                 
             }
